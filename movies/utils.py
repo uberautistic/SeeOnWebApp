@@ -9,8 +9,8 @@ from movies.dataclasses import MoviePreviewDataClass, PersonPreviewDataClass, Mo
 from movies.models import Movie, MoviesGenre, MoviesCountry
 from users.models import Preference, Watchlist, Recomendations
 
-kp1headers = {"X-API-KEY": "Q7R5N9C-03MM0MJ-PPHRM5J-D26F6KP"}
-kp2headers = {"X-API-KEY": "000d0977-5dec-43e9-8c92-b142b61e0dfe"}
+kp1headers = {"X-API-KEY": "токенДляАпиКинопоиска"}
+kp2headers = {"X-API-KEY": "токенДляВторогоАпи"}
 
 """
                 ЗАПРОСЫ К АПИШКАМ
