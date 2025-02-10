@@ -1,0 +1,45 @@
+{% load static %}
+{% load i18n %}
+
+<a href="{% url 'movie_detail' movie.id %}">
+    <div class="film_card" id="movie-{{ movie.id }}">
+        <div class="film_card-content">
+            {% if movie.ratingIMDB %}
+            <div class="rating">
+                <img src="{% static 'movies/img/icons/crown.svg' %}" alt="" class="rating_img">
+                <p class="rating_text">
+                    {{ movie.ratingIMDB }}
+                </p>
+            </div>
+            {% endif %}
+            <button class="like" data-movie-id="{{ movie.id }}" onclick="toggle_watchlist({{ movie.id }}, event)">
+                {% if movie.id in watchlist %}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"
+                          stroke="#ff0000"/>
+                </svg>
+                {% else %}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"
+                          stroke="#AAAAAA"/>
+                </svg>
+                {% endif %}
+            </button>
+            <img src="{{ movie.posterURL }}" alt="" class="film_card-poster">
+            <img src="{{ movie.posterURL }}" alt="" class="film_card-poster blur">
+        </div>
+        <div style="padding-bottom: 40px;">
+        <h3 class="card_title" style="width: 220px; padding-bottom: 20px;">{{ movie.name }}</h3>
+        <div class="card_desc">
+            {% if movie.year %}
+            <p class="card_desc-item">{{ movie.year }}</p>
+            {% endif %}
+            {% if movie.ageRating %}
+            <div class="card_desc-square"></div>
+            <p class="card_desc-item">{{ movie.ageRating }}+</p>
+            {% endif %}
+        </div>
+        </div>
+        </div>
+</a>
+

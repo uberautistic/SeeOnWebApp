@@ -1,0 +1,271 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeeOn</title>
+    <link rel="stylesheet" href="{% static 'movies/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/filmpage.css' %}">
+    <style>
+        .dropbtn {
+          background-color: #4CAF50;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+          background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body class="body">
+{% include 'header.html' %}
+
+<div id="myDropdown" class="choose_service_modal">
+    <button id="back_button" class="back_button"><img src="{% static 'movies/img/icons/cross.svg' %}" alt=""
+                                                      class="cross"></button>
+    <div class="text_service_all">
+        <p class="text_service">Выберите сервис для просмотра</p>
+        <p class="text_service_second"></p>
+    </div>
+    <div class="service-content">
+        {% for item in watchability %}
+        <div class="card-watching">
+            <a class="" href="{{item.URL}}"><img style="position: relative; width: 80px; height: 80px;"
+                                                 src="{{ item.logoURL }}"></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<section class="hero">
+    <div class="hero_content-wrapper">
+        <div class="hero_content">
+            <div class="hero_content-item">
+                <h1 class="hero_film-title">{{ film.name }}</h1>
+                <div class="hero_film-desc">
+                    <div class="hero_film-desc-content">
+                        <p class="hero_desc-item hero_rating">{{ film.ratingIMDB }}</p>
+                        <div class="hero_desc-square"></div>
+                        <p class="hero_desc-item hero_year">{{ film.year }}</p>
+                        <div class="hero_desc-square"></div>
+                        {% for country in countries %}
+                        <p class="hero_desc-item hero_country">{{ country }}</p>
+                        <div class="hero_desc-square"></div>
+                        {% endfor %}
+                        <!--<p class="hero_desc-item hero_duration">2 сезона</p>
+                        <div class="hero_desc-square"></div>-->
+                        <p class="hero_desc-item hero_agelimit">{{ film.ageRating }}</p>
+                    </div>
+                    <div class="hero_film-desc-content">
+                        {% for genre in genres %}
+                        <a href="http://127.0.0.1:8000/catalog/?genres%5B%5D={{genre}}"><p class="hero_desc-item genre">
+                            {{genre}}</p></a>
+                        <div class="hero_desc-square"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <p class="hero_film-subtitle">{{ film.description }}</p>
+            </div>
+            <div class="hero_content-buttons">
+                {% if watchability %}
+                <button id="watch" class="hero_button hero_button-play">
+                    <img src="{% static 'movies/img/icons/play.svg' %}" alt="" class="play">
+                    <!--<p class="hero_button-text">Смотреть</p>-->
+
+                    <p class="hero_button-text"> Смотреть</p>
+                </button>
+                {% endif %}
+
+                {% if film.trailerURL %}
+                <a href="{{ film.trailerURL }}" target="_blank">
+                    <button class="hero_button">трейлер</button>
+                </a>
+                {% endif %}
+                <button class="hero_button hero_button-like" data-movie-id="{{ film.kpid }}"
+                        onclick="toggle_watchlist({{ film.kpid }})">
+                    {% if film.kpid in watchlist %}
+                    <svg width="24" height="24" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"
+                              stroke="#ff0000"/>
+                    </svg>
+                    {% else %}
+                    <svg width="24" height="24" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"
+                              stroke="#FFFFFF"/>
+                    </svg>
+                    {% endif %}
+                </button>
+            </div>
+        </div>
+    </div>
+    {% if film.backdropURL %}
+    <img src="{{ film.backdropURL }}" alt="" class="hero_bg">
+    {% else %}
+    <img src="https://avatars.mds.yandex.net/i?id=1ac9c8b0c3f7570c7709d8190aa8c4e4_l-5209520-images-thumbs&n=13" alt=""
+         class="hero_bg">
+    {% endif %}
+</section>
+<section class="actors block container">
+    <div class="block_head">
+        <h2 class="title">Актеры и роли</h2>
+    </div>
+    <div class="actors_content">
+        {% for actor in cast %}
+        <div class="actor_card">
+            <div class="actor_card-content">
+                <img src="{{ actor.photoURL }}" alt="" class="actor_card-photo">
+            </div>
+            <h3 class="card_title">{{ actor.name }}</h3>
+            {% if actor.description %}
+            <p class="subtitle">{{ actor.description }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% if screenshots %}
+<section class="frames block container">
+    <div class="block_head">
+        <h2 class="title">Кадры</h2>
+    </div>
+    <div class="frames_content">
+        {% for screenshot in screenshots %}
+        <img src="{{ screenshot }}" alt="" class="frame">
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+{% if similar_movies %}
+<section class="films block container">
+    <div class="block_head">
+        <h2 class="title">Смотрите также</h2>
+        {% if similar_movies|length > 5 %}
+        <button class="button_all">все</button>
+        {% endif %}
+    </div>
+    <div class="films_content">
+        {% for movie in similar_movies %}
+        {% if forloop.counter < 6 %}
+        <a href="{% url 'movie_detail' movie.id %}">
+            <div class="film_card">
+                <div class="film_card-content">
+                    <button class="like">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"
+                                  stroke="#AAAAAA"/>
+                        </svg>
+                    </button>
+                    <img src="{{ movie.posterURL }}" alt="" class="film_card-poster">
+                    <img src="{{ movie.posterURL }}" alt="" class="film_card-poster blur">
+                </div>
+                <h3 class="card_title">{{ movie.name }}</h3>
+            </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+<footer class="footer">
+    <div class="footer_content">
+        <div class="footer_column1">
+            <p class="footer_text">
+                <footertitle>SeeOn</footertitle>
+                — это инновационный сервис для поиска фильмов по вашим предпочтениям. Наш удобный инструмент поиска
+                поможет вам найти фильмы, которые точно соответствуют вашему вкусу. Не тратьте время на просмотр
+                бесконечных списков — доверьтесь нашим персонализированным рекомендациям и наслаждайтесь кино вечером.
+            </p>
+            <p class="copyright">
+                © 2024 SeeOn
+            </p>
+        </div>
+        <div class="footer_column2 footer_column">
+            <h2 class="footer_column-title">Сервис</h2>
+            <div class="footer_column-item">
+                <a href="" class="footer_link">Аккаунт</a>
+                <a href="" class="footer_link">Фильмы и сериалы</a>
+                <a href="" class="footer_link">Актеры</a>
+                <a href="" class="footer_link">Режиссеры</a>
+                <a href="" class="footer_link">Подборки</a>
+            </div>
+        </div>
+        <div class="footer_column3 footer_column">
+            <h2 class="footer_column-title">Информация</h2>
+            <div class="footer_column-item">
+                <a href="" class="footer_link">Пользовательское соглашение</a>
+                <a href="" class="footer_link">Политика конфиденциальности</a>
+                <a href="" class="footer_link">вопросы и ответы</a>
+            </div>
+            <div class="theme_toggle">
+                <p class="theme_toggle-text active">светло</p>
+                <button class="theme_content">
+                    <div class="theme_content-item"></div>
+                </button>
+                <p class="theme_toggle-text">темно</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'movies/js/main.js' %}"></script>
+<script src="{% static 'movies/js/actors_carousel.js' %}"></script>
+<script src="{% static 'movies/js/choose_service.js' %}"></script>
+<script>
+
+
+    function toggle_watchlist(id) {
+    var movieId = id;
+    const csrftoken = getCookie('csrftoken');
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'toggle-movie-watchlist' %}",  // Ваш URL для обработки AJAX
+            data: {
+                'movie_id': movieId,
+                'csrfmiddlewaretoken': csrftoken // Для защиты от CSRF
+            },
+            success: function(response) {
+                var button = $('[data-movie-id="' + movieId + '"]');
+                if (response.action === "added") {
+                    button.html('<svg width="24" height="24" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z" stroke="#ff0000"/></svg>');
+                    alert("Фильм добавлен в избранное");
+                } else {
+                    button.html('<svg width="24" height="24" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z" stroke="#FFFFFF"/></svg>');
+                    alert("Фильм удален из избранного");
+                }
+            },
+            error: function(xhr, status, error) {
+                alert("Ошибка: " + error);
+            }
+        });
+}
+
+
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+}
+</script>
+</body>
+</html>

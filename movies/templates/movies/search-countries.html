@@ -1,0 +1,5 @@
+{% for country in countries %}
+<div class="items_modal"><p>{{country.name}}</p> <input name="countries[]"
+                                                        value="{{country.name}}"
+                                                        type="checkbox"></div>
+{% endfor %}

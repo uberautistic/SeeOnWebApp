@@ -1,0 +1,320 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeeOn</title>
+    <link rel="stylesheet" href="{% static 'movies/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/account.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/catalog.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="body">
+<!--<header class="header top" id="header">-->
+<!--    <div class="header_content container">-->
+<!--        <a href="{% url 'homepage' %}">-->
+<!--            <div class="logo">SEEON</div>-->
+<!--        </a>-->
+<!--        <div class="profile">-->
+<!--            <p class="profile_name">{{ user.email }}</p>-->
+<!--            <img src="{{ user.profile_picture.url }}" alt="" class="avatar">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</header>-->
+{% include 'header_lk.html' %}
+<div id="personal_page" class="container pad">
+    <div class="buttons">
+        <button id="personal_data_button" class="account_selector"><p id="personal" class="personal_data">Личные
+            данные</p></button>
+        <button id="films_button" class="account_selector"><p id="films" class="personal_data">Фильмы</p></button>
+
+        <a href="{% url 'calibration' %}">
+        <button id="calibration" class="account_selector" >
+            <p class="personal_data" >Калибровка</p>
+        </button>
+        </a>
+        <a href="{% url 'logout' %}">
+            <button id="exit" class="account_selector" >
+            <p class="personal_data" >Выход</p>
+        </button>
+        </a>
+    </div>
+
+    <div id="personal_info" class="personal_info">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="elements pad_photo">
+                <img src="{{ user.profile_picture.url }}" id="profile_picture" alt="" class="add_photo">
+                {{ user_form.profile_picture }}
+            </div>
+            <div class="info pad_text">
+                <div class="textarea">
+                    {{ user_form.first_name }}
+                    <p>имя</p>
+                </div>
+                <div class="textarea">
+                    {{ user_form.last_name }}
+                    <p>фамилия</p>
+                </div>
+                <div>
+                    <div id="outer" style="display: flex; flex-direction: column;">
+                        <button id="save" class="save_button" style="margin-bottom: 20px;">
+                            <p class="personal_data" style="color: var(&#45;&#45;white-color)">
+                                сохранить
+                            </p>
+                        </button>
+                        <a class="logout_button" href="логаут урл">
+                            <p class="personal_data" style="color: var(&#45;&#45;white-color)">
+                                выйти
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="films_page" class="films_page">
+    {% if user.is_calibrated %}
+    <section class="films block container " style="padding-top: 120px">
+        <div class="block_head_liked">
+            <div class="liked_block">
+                <h2 class="preference">по вашим</h2>
+                <h2 class="preference ">предпочтениям</h2>
+            </div>
+            <button class="button_reset" hx-get="{% url 'refresh_rec' %}" hx-target="#recomendations_content"
+                    hx-swap="innerHTML">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.00008 0.666504C8.53984 0.666504 8.16675 1.0396 8.16675 1.49984C8.16675 1.96007 8.53984 2.33317 9.00008 2.33317C12.682 2.33317 15.6667 5.31793 15.6667 8.99985C15.6667 12.6817 12.682 15.6665 9.00008 15.6665C5.31819 15.6665 2.33341 12.6817 2.33341 8.99985C2.33341 7.30922 2.96208 5.76583 4.00008 4.59004V6.08317C4.00008 6.54341 4.37318 6.9165 4.83341 6.9165C5.29365 6.9165 5.66675 6.54341 5.66675 6.08317V2.74984C5.66675 2.2896 5.29365 1.9165 4.83341 1.9165H1.50008C1.03984 1.9165 0.666748 2.2896 0.666748 2.74984C0.666748 3.21007 1.03984 3.58317 1.50008 3.58317H2.66719C1.42071 5.03934 0.666748 6.93173 0.666748 8.99985C0.666748 13.6022 4.39771 17.3332 9.00008 17.3332C13.6025 17.3332 17.3334 13.6022 17.3334 8.99985C17.3334 4.39746 13.6025 0.666504 9.00008 0.666504Z"
+                          fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.00008 0.666504C8.53984 0.666504 8.16675 1.0396 8.16675 1.49984C8.16675 1.96007 8.53984 2.33317 9.00008 2.33317C12.682 2.33317 15.6667 5.31793 15.6667 8.99985C15.6667 12.6817 12.682 15.6665 9.00008 15.6665C5.31819 15.6665 2.33341 12.6817 2.33341 8.99985C2.33341 7.30922 2.96208 5.76583 4.00008 4.59004V6.08317C4.00008 6.54341 4.37318 6.9165 4.83341 6.9165C5.29365 6.9165 5.66675 6.54341 5.66675 6.08317V2.74984C5.66675 2.2896 5.29365 1.9165 4.83341 1.9165H1.50008C1.03984 1.9165 0.666748 2.2896 0.666748 2.74984C0.666748 3.21007 1.03984 3.58317 1.50008 3.58317H2.66719C1.42071 5.03934 0.666748 6.93173 0.666748 8.99985C0.666748 13.6022 4.39771 17.3332 9.00008 17.3332C13.6025 17.3332 17.3334 13.6022 17.3334 8.99985C17.3334 4.39746 13.6025 0.666504 9.00008 0.666504Z"
+                          fill="url(#paint0_linear_741_2474)"/>
+                    <defs>
+                        <linearGradient id="paint0_linear_741_2474" x1="0.666748" y1="8.99985" x2="17.3334" y2="8.99985"
+                                        gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#623FC8"/>
+                            <stop offset="1" stop-color="#F643D9"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </button>
+        </div>
+        <div class="gradient"></div>
+        <div id="recomendations_content" class="films_content">
+            {% for movie in recomendations %}
+            {% include 'movies/film_card_recomendations.html' %}
+            {% endfor %}
+        </div>
+    </section>
+    {% else %}
+    <section class="neirorec container">
+        <div class="neirorec_text-content">
+            <p class="neirorec_text">Смотри фильмы <br>и сериалы вместе</p>
+            <h2 class="neirorec_title">с Нейро</h2>
+        </div>
+        <img src="{% static 'movies/img/neiro.png' %}" alt="" class="neirorec_img">
+        <img src="{% static 'movies/img/neiro_shadow.png' %}" alt="" class="neirorec_img shadow">
+        <a href="{% url 'calibration' %}">
+            <button class="neirorec_button">начать подбор</button>
+        </a>
+    </section>
+    {% endif %}
+    {% if watchlist %}
+    <section class="films block container " >
+        <div class="block_head_liked">
+            <div class="liked_block">
+                <h2 class="title">Нравится &nbsp;<svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.333008 4.09189C0.333008 7.33382 3.01263 9.06142 4.97416 10.6078C5.66634 11.1534 6.33301 11.6672 6.99967 11.6672C7.66634 11.6672 8.33301 11.1534 9.02521 10.6078C10.9867 9.06142 13.6663 7.33382 13.6663 4.09189C13.6663 0.84993 9.99954 -1.4492 6.99967 1.66758C3.99978 -1.4492 0.333008 0.84993 0.333008 4.09189Z"
+                          fill="#E8234A"/>
+                </svg>
+                </h2>
+            </div>
+
+            <button id="button_all" class="button_all"><div id="unwrap">развернуть</div><div id="wrap">свернуть</div></button>
+        </div>
+        <!--В ЭТОТ v ДИВ ПЕРВЫЕ 5-->
+        <div class="films_content">
+            {% for movie in watchlist %}
+            {% if forloop.counter < 6 %}
+            {% include 'movies/film_card_watchlist.html' %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!--В ЭТОТ v ДИВ ОСТАЛЬНЫЕ КРОМЕ ПЕРВЫХ 5-->
+        <div id="wrap_liked" class="films_content">
+            {% for movie in watchlist %}
+            {% if forloop.counter > 5 %}
+            {% include 'movies/film_card_watchlist.html' %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+</div>
+<footer class="footer">
+    <div class="footer_content">
+        <div class="footer_column1">
+            <p class="footer_text">
+                <footertitle>SeeOn</footertitle>
+                — это инновационный сервис для поиска фильмов по вашим предпочтениям. Наш удобный инструмент поиска
+                поможет вам найти фильмы, которые точно соответствуют вашему вкусу. Не тратьте время на просмотр
+                бесконечных списков — доверьтесь нашим персонализированным рекомендациям и наслаждайтесь кино вечером.
+            </p>
+            <p class="copyright">
+                © 2024 SeeOn
+            </p>
+        </div>
+        <div class="footer_column2 footer_column">
+            <h2 class="footer_column-title">Сервис</h2>
+            <div class="footer_column-item">
+                <a href="" class="footer_link">Аккаунт</a>
+                <a href="" class="footer_link">Фильмы и сериалы</a>
+                <a href="" class="footer_link">Актеры</a>
+                <a href="" class="footer_link">Режиссеры</a>
+                <a href="" class="footer_link">Подборки</a>
+            </div>
+        </div>
+        <div class="footer_column3 footer_column">
+            <h2 class="footer_column-title">Информация</h2>
+            <div class="footer_column-item">
+                <a href="" class="footer_link">Пользовательское соглашение</a>
+                <a href="" class="footer_link">Политика конфиденциальности</a>
+                <a href="" class="footer_link">вопросы и ответы</a>
+            </div>
+            <div class="theme_toggle">
+                <p class="theme_toggle-text active">светло</p>
+                <button id="theme_toggle_theme" class="theme_content">
+                    <div class="theme_content-item"></div>
+                </button>
+                <p class="theme_toggle-text">темно</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'movies/js/genre_carousel.js' %}"></script>
+<script src="{% static 'users/js/personal.js' %}"></script>
+<script>
+    document.getElementById('id_profile_picture').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const imgElement = document.getElementById('profile_picture');
+            imgElement.src = e.target.result;
+            imgElement.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+    function toggle_watchlist(id, event) {
+    event.stopPropagation();
+    event.preventDefault();
+        var movieId = id;
+        const csrftoken = getCookie('csrftoken');
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'toggle-movie-watchlist' %}",
+                data: {
+                    'movie_id': movieId,
+                    'csrfmiddlewaretoken': csrftoken
+                },
+                success: function(response) {
+                    var button = $('[data-movie-id="' + movieId + '"]');
+                    console.log(button);
+                    if (response.action === "added") {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#ff0000"/></svg>');
+                    } else {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#AAAAAA"/></svg>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert("Ошибка: " + error);
+                }
+            });
+    }
+
+    function toggle_watchlist_rec(id, event) {
+    event.stopPropagation();
+    event.preventDefault();
+        var movieId = id;
+        const csrftoken = getCookie('csrftoken');
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'toggle-movie-watchlist' %}",
+                data: {
+                    'movie_id': movieId,
+                    'csrfmiddlewaretoken': csrftoken
+                },
+                success: function(response) {
+                    var button = $('[data-movie-id="' + movieId + '"]');
+                    console.log(button);
+                    if (response.action === "added") {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#ff0000"/></svg>');
+                    } else {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#AAAAAA"/></svg>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert("Ошибка: " + error);
+                }
+            });
+    }
+
+    function toggle_watchlist_wl(id, event) {
+    event.stopPropagation();
+    event.preventDefault();
+        var movieId = id;
+        const csrftoken = getCookie('csrftoken');
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'toggle-movie-watchlist' %}",
+                data: {
+                    'movie_id': movieId,
+                    'csrfmiddlewaretoken': csrftoken
+                },
+                success: function(response) {
+                    var button = $('[data-movie-id="' + movieId + '"]');
+                    if (response.action === "added") {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#ff0000"/></svg>');
+                    } else {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#AAAAAA"/></svg>');
+                        var divId= "#movie-"+movieId;
+                        $(divId).remove();
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert("Ошибка: " + error);
+                }
+            });
+    }
+    function getCookie(name) {
+        var dc = document.cookie;
+        var prefix = name + "=";
+        var begin = dc.indexOf("; " + prefix);
+        if (begin == -1) {
+            begin = dc.indexOf(prefix);
+            if (begin != 0) return null;
+        }
+        else
+        {
+            begin += 2;
+            var end = document.cookie.indexOf(";", begin);
+            if (end == -1) {
+            end = dc.length;
+            }
+        }
+        // because unescape has been deprecated, replaced with decodeURI
+        //return unescape(dc.substring(begin + prefix.length, end));
+        return decodeURI(dc.substring(begin + prefix.length, end));
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://unpkg.com/htmx.org@2.0.3"
+            integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="header" id="header">
+    <div class="header_content container">
+        <a href="{% url 'homepage' %}">
+            <div class="logo">SEEON</div>
+        </a>
+        <div class="search_bar">
+            <div class="search_bar-content">
+                <input id="search-input" type="text" class="search_bar-input"
+                       autocomplete="off"
+                       placeholder="поиск" name="q"
+                       hx-get="{% url 'search-by-name' %}"
+                       hx-trigger="keyup changed delay:500ms"
+                       hx-target="#search-container"
+                >
+                <div class="search_bar-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.115 11.0941L14 14M12.6667 7.33333C12.6667 10.2789 10.2789 12.6667 7.33333 12.6667C4.38781 12.6667 2 10.2789 2 7.33333C2 4.38781 4.38781 2 7.33333 2C10.2789 2 12.6667 4.38781 12.6667 7.33333Z"
+                              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <button id="search-cancel" class="search_cancel">назад</button>
+        </div>
+        {% if user.is_authenticated %}
+        <div id="profile_hidden" class="profile">
+        <a  class="profile" href="{% url 'profile' %}">
+            <p class="profile_name">{{ user.first_name }}</p>
+            <img src="{{ user.profile_picture.url }}" alt="" class="avatar">
+        </a>
+        </div>
+
+        <div id="toggle_neiro" class="theme_toggle hidden profile" data-search-mode="0">
+                <button id="neiro_but" class="theme_content">
+                    <div id="theme_content-item" class="theme_content-item"></div>
+
+                </button>
+                <p id="profile_text" class="profile_toggle-text">с нейро</p>
+        </div>
+
+
+        {% else %}
+        <a id="modal_trigger" href="#modal">
+            <button id="login_but" class="login_button">
+                Вход
+                <svg class="svg_class" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_718_3096)">
+                        <path d="M1.33398 7.99935H10.6673M10.6673 7.99935L8.334 5.99936M10.6673 7.99935L8.334 9.99935"
+                              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.00146 4.66668C6.00954 3.21666 6.07384 2.43138 6.58609 1.91913C7.1719 1.33334 8.1147 1.33334 10.0003 1.33334H10.667C12.5526 1.33334 13.4954 1.33334 14.0812 1.91913C14.667 2.50492 14.667 3.44772 14.667 5.33334V10.6667C14.667 12.5523 14.667 13.4951 14.0812 14.0809C13.4954 14.6667 12.5526 14.6667 10.667 14.6667H10.0003C8.1147 14.6667 7.1719 14.6667 6.58609 14.0809C6.07384 13.5686 6.00954 12.7833 6.00146 11.3333"
+                              stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_718_3096">
+                            <rect width="16" height="16" fill=""/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
+        </a>
+        {% endif %}
+    </div>
+    <div id="search-container" class="search-container">
+        {% include 'movies/search_result.html' %}
+    </div>
+</header>
+
+<div id="modal" class="popupContainer" style="display:none;">
+    <section class="popupBody">
+        <div class="user_login" id="user_login_container">
+            <section class="login" id="login">
+                <form action="#" method="POST" id="login-form" class="login-form" autocomplete="off" novalidate>
+                    {%csrf_token %}
+                    <div class="title-container">
+                        <p class="title">Вход</p>
+                        <p class="subtitle">Рады снова вас видеть!</p>
+                    </div>
+                    <div class="mail_bar">
+                        <div class="mail_bar-content">
+                            <input type="text" id="current-email" name="current-email" class="login-email"
+                                   placeholder="Эл. почта" autocomplete="off"/>
+                        </div>
+                    </div>
+                    <p class="text-danger text-center" id="no-user-error" style="display:none;color: red;">
+                        Пользователь не найден, пожалуйста, зарегистрируйтесь.</p>
+                    <br/>
+                    <div class="mail_bar">
+                        <div class="mail_bar-content">
+                            <input type="password" id="current-password" name="current-password"
+                                   autocomplete="section-register shipping current-password" class="login-password"
+                                   placeholder="Пароль"/>
+                        </div>
+                    </div>
+
+                    <p class="text-danger text-center" id="password-error" style="display:none;color: red;">
+                        Wrong Password!</p>
+                    <br/>
+                    <p class="text-danger text-center" id="error" style="display:none;color: red;">
+                        Что-то пошло не так, пожалуйста, повторите попытку позже.</p>
+                    <button class="login-button" type="submit" id="login-submit"
+                            name="login-submit" aria-hidden="true">
+                        <p class="continue">Войти</p>
+                    </button>
+                    <div class="switch-form">
+                        <p class="click_continue">Нет аккаунта?</p>
+                        <a href="#" id="register_form" class="switch-form-label"> Зарегистрируйся! </a>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <!-- Register Form -->
+        <div class="user_register" id="user_register_container">
+            <section class="signup" id="signup">
+                <form action="#" method="POST" id="signup-form" class="signup-form" novalidate>{% csrf_token %}
+                    <div class="title-container">
+                        <p class="title">Регистрация</p>
+                        <p class="subtitle">Рады вас видеть!</p>
+                    </div>
+                    <div class="mail_bar">
+                        <div class="mail_bar-content">
+                            <input type="text" id="name" name="name" class="register-name"
+                                   autocomplete="section-register shipping name" placeholder="Имя"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="mail_bar">
+                        <div class="mail_bar-content">
+                            <input type="text" id="email" name="email" class="login-email"
+                                   autocomplete="section-register shipping email" placeholder="Эл. почта"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="mail_bar">
+                        <div class="mail_bar-content">
+                            <input type="password" id="new-password" name="new-password"
+                                   autocomplete="section-register shipping new-password" class="login-password"
+                                   placeholder="Пароль"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <p class="text-danger text-center" id="username_error" style="display:none;color: red;">We
+                        didn't find you! Please Register</p>
+                    <button class="login-button" type="submit" id="register-submit"
+                            name="register-submit" aria-hidden="true">
+                        <p class="continue">Зарегистрироваться</p>
+                    </button>
+                    <div class="switch-form">
+                        <p class="click_continue">Уже зарегистрированы?</p>
+                        <a href="#" id="login_form" class="switch-form-label"> Войти </a>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </section>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+<script src="{% static 'lean_modal.js' %}"></script>
+<script src="{% static 'auth-forms-script.js' %}"></script>
+<script src="{% static 'search.js' %}"></script>
+<script type="text/javascript">
+    /* Login Form AJAX */
+    $('#login-form').submit(function(e){
+      var submitBtn = $(this).find('input[type=submit]');
+      submitBtn.prop('disabled', true);
+      e.preventDefault();
+      $.ajax({
+        url: "{% url 'user_login' %}", // the file to call
+        type: "POST", // GET or POST
+        data: $(this).serialize(), // get the form data
+        success: function(data){
+          var login_response = jQuery.parseJSON(data);
+          console.log(login_response);
+          if (login_response.user == "nouser"){
+            $('#no-user-error').css('display', 'block');
+            submitBtn.prop('disabled', false);
+          }
+          else if (login_response.user == "password wrong") {
+            $('#password-error').css('display', 'block');
+            submitBtn.prop('disabled', false);
+          }
+          else {
+            if (login_response.login == "Failed") {
+              alert("Invalid Login!");
+            } else {
+                            $(".popupContainer").hide();
+              setTimeout(function() {
+              location.reload();
+              }, 400);
+            }
+          }
+        },/* end of Success */
+        error: function(data) {
+          $('#error').css('display', 'block');
+        }/*  end of error */
+      });/*./ajax*/
+    });
+    /*End of loin form AJAX */
+
+  /* Signup Form AJAX */
+      $('#signup-form').submit(function(e){
+      var submitBtn = $(this).find('input[type=submit]');
+      submitBtn.prop('disabled', true);
+      e.preventDefault();
+      $.ajax({
+        url: "{% url 'user_signup' %}", // the file to call
+        type: "POST", // GET or POST
+        data: $(this).serialize(), // get the form data
+        success: function(data){
+          var signup_response = jQuery.parseJSON(data);
+          if (signup_response.register == "Success") {
+            $(".popupContainer").hide();
+              setTimeout(function() {
+              location.reload();
+              }, 400);
+          }
+          else if(signup_response.register == "Error"){
+                  var p = document.getElementById('username_error');
+              p.textContent = signup_response.username_error;
+              p.style.display = 'block';
+          }
+        },/* end of Success */
+      });/*./ajax*/
+      });
+  /* End of Signup Form */
+</script>
+<script src="{% static 'movies/js/toggle_neiro.js' %}"></script>
+</body>
+</html>

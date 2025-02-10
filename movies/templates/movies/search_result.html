@@ -1,0 +1,6 @@
+{% load static %}
+{% if search_result %}
+{% for movie in search_result %}
+{% include 'movies/film_card.html' %}
+{% endfor %}
+{% endif %}

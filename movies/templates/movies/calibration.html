@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeeOn</title>
+    <link rel="stylesheet" href="{% static 'movies/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/account.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/catalog.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/calibration.css' %}">
+</head>
+
+
+<body class="body">
+<header class="header top" id="header">
+    <div class="header_content container">
+        <div class="logo hidden">SEEON</div>
+        <a href="{% url 'cancel-calibration' %}" id="back_search"><p class="back_search">назад</p></a>
+        <div class="search_bar">
+            <div class="search_bar-content">
+                <input id="search_bar-input" type="text" class="search_bar-input" placeholder="поиск">
+                <div class="search_bar-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.115 11.0941L14 14M12.6667 7.33333C12.6667 10.2789 10.2789 12.6667 7.33333 12.6667C4.38781 12.6667 2 10.2789 2 7.33333C2 4.38781 4.38781 2 7.33333 2C10.2789 2 12.6667 4.38781 12.6667 7.33333Z"
+                              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <button class="search_cancel">отменить</button>
+        </div>
+        <p id="counter" >Выберите как минимум 5 фильмов</p>
+        <a href="{% url 'finish_calibration' %}">
+            <div id="finish" class="end_calibration" style="display:none;">
+            <p class="end_calibration_text">завершить</p>
+        </div>
+        </a>
+    </div>
+</header>
+
+<section class="films block container " style="padding-top: 120px">
+    <div class="title_text"> Выберите фильмы, которые вам понравились
+    </div>
+    <div id="wrap_liked" class="liked_content" style="padding-top: 40px;">
+        {% for movie in calibration_movies %}
+        {% include 'movies/film_card_calibration.html' %}
+        {% endfor %}
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer_content">
+        <div class="footer_column1">
+            <p class="footer_text">
+                <footertitle>SeeOn</footertitle>
+                — это инновационный сервис для поиска фильмов по вашим предпочтениям. Наш удобный инструмент поиска
+                поможет вам найти фильмы, которые точно соответствуют вашему вкусу. Не тратьте время на просмотр
+                бесконечных списков — доверьтесь нашим персонализированным рекомендациям и наслаждайтесь кино вечером.
+            </p>
+            <p class="copyright">
+                © 2024 SeeOn
+            </p>
+        </div>
+        <div class="footer_column2 footer_column">
+            <h2 class="footer_column-title">Сервис</h2>
+            <div class="footer_column-item">
+                <a href="" class="footer_link">Аккаунт</a>
+                <a href="" class="footer_link">Фильмы и сериалы</a>
+                <a href="" class="footer_link">Актеры</a>
+                <a href="" class="footer_link">Режиссеры</a>
+                <a href="" class="footer_link">Подборки</a>
+            </div>
+        </div>
+        <div class="footer_column3 footer_column">
+            <h2 class="footer_column-title">Информация</h2>
+            <div class="footer_column-item">
+                <a href="" class="footer_link">Пользовательское соглашение</a>
+                <a href="" class="footer_link">Политика конфиденциальности</a>
+                <a href="" class="footer_link">вопросы и ответы</a>
+            </div>
+            <div class="theme_toggle">
+                <p class="theme_toggle-text active">светло</p>
+                <button id="theme_toggle_theme" class="theme_content">
+                    <div class="theme_content-item"></div>
+                </button>
+                <p class="theme_toggle-text">темно</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'movies/js/genre_carousel.js' %}"></script>
+<script src="{% static 'movies/js/auth.js' %}"></script>
+<script src="{% static 'search.js' %}"></script>
+<script src="{% static 'users/js/personal.js' %}"></script>
+<script src="{% static 'movies/js/filter.js' %}"></script>
+<script>
+    $(document).ready(function() {
+    $('#search_bar-input').on('change', function() {
+        var query = $('#search_bar-input').val().toLowerCase();
+        var found = false;
+
+        $('.film_card').each(function() {
+            var title = $(this).data('title').toLowerCase();
+            if (title.includes(query)) {
+                $(this).get(0).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                found = true;
+                return false; // Прерываем цикл each
+            }
+        });
+        if (!found) {
+            alert('Фильм не найден.'); // Сообщаем, если ничего не найдено
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeeOn</title>
+    <link rel="stylesheet" href="{% static 'movies/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/account.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/catalog.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.3/dist/htmx.js"
+            integrity="sha384-BBDmZzVt6vjz5YbQqZPtFZW82o8QotoM7RUp5xOxV3nSJ8u2pSdtzFAbGKzTlKtg"
+            crossorigin="anonymous"></script>
+</head>
+<body class="body">
+{% include 'header.html' %}
+{% if user.is_authenticated %}
+{% if user.is_calibrated %}
+<section class="films block container" style="padding-top: 300px;">
+    <div class="block_head_liked">
+        <div class="liked_block">
+            <h2 class="preference">по вашим</h2>
+            <h2 class="preference ">предпочтениям</h2>
+        </div>
+        <button class="button_reset" hx-get="{% url 'refresh_rec' %}" hx-target="#recomendations_content"
+                hx-swap="innerHTML">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M9.00008 0.666504C8.53984 0.666504 8.16675 1.0396 8.16675 1.49984C8.16675 1.96007 8.53984 2.33317 9.00008 2.33317C12.682 2.33317 15.6667 5.31793 15.6667 8.99985C15.6667 12.6817 12.682 15.6665 9.00008 15.6665C5.31819 15.6665 2.33341 12.6817 2.33341 8.99985C2.33341 7.30922 2.96208 5.76583 4.00008 4.59004V6.08317C4.00008 6.54341 4.37318 6.9165 4.83341 6.9165C5.29365 6.9165 5.66675 6.54341 5.66675 6.08317V2.74984C5.66675 2.2896 5.29365 1.9165 4.83341 1.9165H1.50008C1.03984 1.9165 0.666748 2.2896 0.666748 2.74984C0.666748 3.21007 1.03984 3.58317 1.50008 3.58317H2.66719C1.42071 5.03934 0.666748 6.93173 0.666748 8.99985C0.666748 13.6022 4.39771 17.3332 9.00008 17.3332C13.6025 17.3332 17.3334 13.6022 17.3334 8.99985C17.3334 4.39746 13.6025 0.666504 9.00008 0.666504Z"
+                      fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M9.00008 0.666504C8.53984 0.666504 8.16675 1.0396 8.16675 1.49984C8.16675 1.96007 8.53984 2.33317 9.00008 2.33317C12.682 2.33317 15.6667 5.31793 15.6667 8.99985C15.6667 12.6817 12.682 15.6665 9.00008 15.6665C5.31819 15.6665 2.33341 12.6817 2.33341 8.99985C2.33341 7.30922 2.96208 5.76583 4.00008 4.59004V6.08317C4.00008 6.54341 4.37318 6.9165 4.83341 6.9165C5.29365 6.9165 5.66675 6.54341 5.66675 6.08317V2.74984C5.66675 2.2896 5.29365 1.9165 4.83341 1.9165H1.50008C1.03984 1.9165 0.666748 2.2896 0.666748 2.74984C0.666748 3.21007 1.03984 3.58317 1.50008 3.58317H2.66719C1.42071 5.03934 0.666748 6.93173 0.666748 8.99985C0.666748 13.6022 4.39771 17.3332 9.00008 17.3332C13.6025 17.3332 17.3334 13.6022 17.3334 8.99985C17.3334 4.39746 13.6025 0.666504 9.00008 0.666504Z"
+                      fill="url(#paint0_linear_741_2474)"/>
+                <defs>
+                    <linearGradient id="paint0_linear_741_2474" x1="0.666748" y1="8.99985" x2="17.3334" y2="8.99985"
+                                    gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#623FC8"/>
+                        <stop offset="1" stop-color="#F643D9"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </button>
+    </div>
+    <div class="gradient"></div>
+    <div id="recomendations_content" class="films_content">
+        {% for movie in recomendations %}
+        {% include 'movies/film_card_recomendations.html' %}
+        {% endfor %}
+    </div>
+</section>
+{% else %}
+<section class="neirorec container" style="padding-top: 120px;">
+    <div class="neirorec_text-content">
+        <p class="neirorec_text">Смотри фильмы <br>и сериалы вместе</p>
+        <h2 class="neirorec_title">с Нейро</h2>
+    </div>
+    <img src="{% static 'movies/img/neiro.png' %}" alt="" class="neirorec_img">
+    <img src="{% static 'movies/img/neiro_shadow.png' %}" alt="" class="neirorec_img shadow">
+    <a href="{% url 'calibration' %}">
+        <button class="neirorec_button">начать подбор</button>
+    </a>
+</section>
+{% endif %}
+{% else %}
+<section class="neirorec container" style="padding-top: 120px;">
+    <div class="neirorec_text-content">
+        <p class="neirorec_text">Смотри фильмы <br>и сериалы вместе</p>
+        <h2 class="neirorec_title">с Нейро</h2>
+    </div>
+    <img src="{% static 'movies/img/neiro.png' %}" alt="" class="neirorec_img">
+    <img src="{% static 'movies/img/neiro_shadow.png' %}" alt="" class="neirorec_img shadow">
+    <button class="neirorec_button" onclick='alert("Пожалуйста, войдите или зарегистрируйтесь.");'>начать подбор</button>
+</section>
+{% endif %}
+
+
+<section class="films block container ">
+    <form method="GET" hx-get="{% url 'filter' %}" hx-target="#filter_result" hx-swap="innerHTML">
+        <div class="filter_add_and_research" style="column-gap: 20px;">
+            <div class="filter">
+                <div id="sort-content" class="parameters_filtration">
+                    <div id="date_sort_div" class="param_search">
+                        <button id="date_premier_button" style="transform: translateY(-25%);">
+                            <div id="date_premier" class="param_search">
+                                <p class="filter_font">дата</p>&nbsp;
+                                <svg class="arrow" width="10" height="8" viewBox="0 0 10 8" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.29904 6.75C5.72169 7.75 4.27831 7.75 3.70096 6.75L1.10289 2.25C0.525536 1.25 1.24722 -8.52615e-07 2.40192 -7.51668e-07L7.59808 -2.97406e-07C8.75278 -1.96458e-07 9.47447 1.25 8.89711 2.25L6.29904 6.75Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="modal_date_sort" class="modal_filter" style="height: 100px;">
+                            <div class="modal-content-item">
+                                <div class="items_modal"><p>Сначала новые</p> <input name="date_sort"
+                                                                                     value="1"
+                                                                                     type="radio"></div>
+                                <div class="items_modal"><p>Сначала старые</p> <input name="date_sort"
+                                                                                      value="-1"
+                                                                                      type="radio"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rate_sort_div" class="param_search">
+                        <button id="rating_button" style="transform: translateY(-25%);">
+                            <div id="rating" class="param_search">
+                                <p class="filter_font">рейтинг</p>&nbsp;
+                                <svg class="arrow" width="10" height="8" viewBox="0 0 10 8" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.29904 6.75C5.72169 7.75 4.27831 7.75 3.70096 6.75L1.10289 2.25C0.525536 1.25 1.24722 -8.52615e-07 2.40192 -7.51668e-07L7.59808 -2.97406e-07C8.75278 -1.96458e-07 9.47447 1.25 8.89711 2.25L6.29904 6.75Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="modal_rate_sort" class="modal_filter" style="height: 100px;">
+                            <div class="modal-content-item">
+                                <div class="items_modal"><p>По убыванию</p> <input name="rating_sort"
+                                                                                   value="-1"
+                                                                                   type="radio"></div>
+                                <div class="items_modal"><p>По возрастанию</p> <input name="rating_sort"
+                                                                                      value="1"
+                                                                                      type="radio"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; column-gap: 24px;">
+                    <div id="filter_content" style="display:flex; padding: 14px 0px; ">
+                        <button id="filter">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.6666 2.66691C14.6666 2.2002 14.6663 1.96667 14.5754 1.78841C14.4956 1.63161 14.3685 1.50422 14.2118 1.42432C14.0335 1.3335 13.7997 1.3335 13.3329 1.3335H2.66626C2.19955 1.3335 1.96643 1.3335 1.78817 1.42432C1.63137 1.50422 1.50398 1.63161 1.42408 1.78841C1.33325 1.96667 1.33325 2.2002 1.33325 2.66691V3.2813C1.33325 3.48512 1.33325 3.5871 1.35628 3.68301C1.37669 3.76805 1.41044 3.84927 1.45614 3.92383C1.50765 4.0079 1.57984 4.08009 1.72388 4.22412L5.94283 8.44308C6.08694 8.58716 6.15862 8.65883 6.21015 8.743C6.25584 8.8175 6.29005 8.899 6.31047 8.98408C6.33325 9.079 6.33325 9.17975 6.33325 9.3795V13.3427C6.33325 14.057 6.33325 14.4144 6.48367 14.6295C6.61509 14.8173 6.81775 14.9427 7.0445 14.9762C7.30417 15.0145 7.62384 14.8549 8.26275 14.5355L8.92942 14.2022C9.197 14.0684 9.33042 14.0012 9.42817 13.9014C9.51458 13.8132 9.58075 13.7072 9.621 13.5905C9.66659 13.4584 9.66659 13.3085 9.66659 13.0093V9.38566C9.66659 9.18183 9.66659 9.08 9.68959 8.98408C9.71 8.899 9.74375 8.8175 9.7895 8.743C9.84067 8.65941 9.91217 8.58791 10.0543 8.44575L10.0573 8.44308L14.2762 4.22412C14.4203 4.08 14.4919 4.00793 14.5435 3.92383C14.5892 3.84927 14.6234 3.76805 14.6438 3.68301C14.6666 3.58809 14.6666 3.4872 14.6666 3.2875V2.66691Z"
+                                      stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div style="display:flex; ">
+                        <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0.5" y1="0.5" x2="0.499999" y2="15.5" stroke="#AAAAAA" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div id="parameters_content" style="padding: 12px 0px;">
+                        <button type="button" id="parameters_selection">
+                            <svg width="16" height="10" viewBox="0 0 16 10" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M0.5 0.833333C0.5 0.3731 0.8731 0 1.33333 0H14.6667C15.1269 0 15.5 0.3731 15.5 0.833333C15.5 1.29357 15.1269 1.66667 14.6667 1.66667H1.33333C0.8731 1.66667 0.5 1.29357 0.5 0.833333ZM3 5C3 4.53975 3.3731 4.16667 3.83333 4.16667H12.1667C12.6269 4.16667 13 4.53975 13 5C13 5.46025 12.6269 5.83333 12.1667 5.83333H3.83333C3.3731 5.83333 3 5.46025 3 5ZM5.5 9.16667C5.5 8.70642 5.8731 8.33333 6.33333 8.33333H9.66667C10.1269 8.33333 10.5 8.70642 10.5 9.16667C10.5 9.62692 10.1269 10 9.66667 10H6.33333C5.8731 10 5.5 9.62692 5.5 9.16667Z"
+                                      fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="parameters_filtration" class="parameters_filtration">
+                    <div id="type_div" class="param_search">
+                        <button id="type_button" style="transform: translateY(-25%);">
+                            <div id="type" class="param_search">
+                                <p class="filter_font">тип</p>&nbsp;<svg class="arrow" width="10" height="8"
+                                                                         viewBox="0 0 10 8" fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.29904 6.75C5.72169 7.75 4.27831 7.75 3.70096 6.75L1.10289 2.25C0.525536 1.25 1.24722 -8.52615e-07 2.40192 -7.51668e-07L7.59808 -2.97406e-07C8.75278 -1.96458e-07 9.47447 1.25 8.89711 2.25L6.29904 6.75Z"
+                                      fill="white"/>
+                            </svg>
+                            </div>
+                        </button>
+                        <div id="modal_type" class="modal_filter">
+                            <div class="modal-content-item">
+                                {% for type in types %}
+                                <div class="items_modal"><p>{{type.name}}</p> <input name="types[]"
+                                                                                     value="{{type.slug}}"
+                                                                                     type="checkbox"></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div id="genre_div" class="param_search">
+                        <button id="genre_button" style="transform: translateY(-25%);">
+                            <div id="genre" class="param_search">
+                                <p class="filter_font">жанр&nbsp; </p>
+                                <svg class="arrow" width="10" height="8" viewBox="0 0 10 8" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.29904 6.75C5.72169 7.75 4.27831 7.75 3.70096 6.75L1.10289 2.25C0.525536 1.25 1.24722 -8.52615e-07 2.40192 -7.51668e-07L7.59808 -2.97406e-07C8.75278 -1.96458e-07 9.47447 1.25 8.89711 2.25L6.29904 6.75Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="modal_genre" class="modal_filter">
+                            <div class="modal-content-item">
+                                <input type="text"
+                                       placeholder="Жанр..."
+                                       name="q_genre"
+                                       hx-get="{% url 'search-genres' %}"
+                                       hx-trigger="keyup changed delay:150ms"
+                                       hx-target="#genres-search-result">
+                                <div class="modal-content-item" id="genres-search-result">
+                                    {% include 'movies/search-genres.html' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="country_div" class="param_search">
+                        <button id="country_button" style="transform: translateY(-25%);">
+                            <div id="country" class="param_search">
+                                <p class="filter_font">страна&nbsp; </p>
+                                <svg class="arrow" width="10" height="8" viewBox="0 0 10 8" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.29904 6.75C5.72169 7.75 4.27831 7.75 3.70096 6.75L1.10289 2.25C0.525536 1.25 1.24722 -8.52615e-07 2.40192 -7.51668e-07L7.59808 -2.97406e-07C8.75278 -1.96458e-07 9.47447 1.25 8.89711 2.25L6.29904 6.75Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="country_year" class="modal_filter">
+                            <div class="modal-content-item">
+                                <input type="text"
+                                       placeholder="Страна..."
+                                       name="q"
+                                       hx-get="{% url 'search-country' %}"
+                                       hx-trigger="keyup changed delay:150ms"
+                                       hx-target="#country-search-result">
+                                <div id="country-search-result" class="modal-content-item">
+                                    {% include 'movies/search-countries.html' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="year_div" class="param_search">
+                        <button id="year_button" style="transform: translateY(-25%);">
+                            <div id="year" class="param_search">
+                                <p class="filter_font">режиссер&nbsp; </p>
+                                <svg class="arrow" width="10" height="8" viewBox="0 0 10 8" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.29904 6.75C5.72169 7.75 4.27831 7.75 3.70096 6.75L1.10289 2.25C0.525536 1.25 1.24722 -8.52615e-07 2.40192 -7.51668e-07L7.59808 -2.97406e-07C8.75278 -1.96458e-07 9.47447 1.25 8.89711 2.25L6.29904 6.75Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="modal_year" class="modal_filter">
+                            <div class="modal-content-item">
+                                <input type="text"
+                                       placeholder="Режиссер..."
+                                       name="q_dir"
+                                       hx-get="{% url 'search-directors' %}"
+                                       hx-trigger="keyup changed delay:150ms"
+                                       hx-target="#director-search-result">
+                                <div class="modal-content-item" id="director-search-result">
+                                    {% include 'movies/search-directors.html' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="age_div" class="param_search">
+                        <button id="age_button" style="transform: translateY(-25%);">
+                            <div id="age" class="param_search">
+                                <p class="filter_font">возраст&nbsp; </p>
+                                <svg class="arrow" width="10" height="8" viewBox="0 0 10 8" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.29904 6.75C5.72169 7.75 4.27831 7.75 3.70096 6.75L1.10289 2.25C0.525536 1.25 1.24722 -8.52615e-07 2.40192 -7.51668e-07L7.59808 -2.97406e-07C8.75278 -1.96458e-07 9.47447 1.25 8.89711 2.25L6.29904 6.75Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="modal_age" class="modal_filter">
+                            <div class="modal-content-item">
+                                <div class="items_modal"><p>0+</p> <input name="age_rating"
+                                                                          value="0"
+                                                                          type="radio"></div>
+                                <div class="items_modal"><p>6+</p> <input name="age_rating"
+                                                                          value="6"
+                                                                          type="radio"></div>
+                                <div class="items_modal"><p>12+</p> <input name="age_rating"
+                                                                           value="12"
+                                                                           type="radio"></div>
+                                <div class="items_modal"><p>16+</p> <input name="age_rating"
+                                                                           value="16"
+                                                                           type="radio"></div>
+                                <div class="items_modal"><p>18+</p> <input name="age_rating"
+                                                                           value="18"
+                                                                           type="radio"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="search_settings" type="submit"><p style="color: var(--blue-color);  ">поиск</p></button>
+            <button id="reset_settings" type="reset"><p style="color: var(--blue-color);  ">сбросить</p></button>
+        </div>
+    </form>
+    <div id="wrap_liked" class="liked_block">
+        <div id="filter_result" class="liked_content">
+            {% for movie in movies %}
+            {% include 'movies/film_card.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="footer_content">
+        <div class="footer_column1">
+            <p class="footer_text">
+                <footertitle>SeeOn</footertitle>
+                — это инновационный сервис для поиска фильмов по вашим предпочтениям. Наш удобный инструмент поиска
+                поможет вам найти фильмы, которые точно соответствуют вашему вкусу. Не тратьте время на просмотр
+                бесконечных списков — доверьтесь нашим персонализированным рекомендациям и наслаждайтесь кино вечером.
+            </p>
+            <p class="copyright">
+                © 2024 SeeOn
+            </p>
+        </div>
+        <div class="footer_column2 footer_column">
+            <h2 class="footer_column-title">Сервис</h2>
+            <div class="footer_column-item">
+                <a href="" class="footer_link">Аккаунт</a>
+                <a href="" class="footer_link">Фильмы и сериалы</a>
+                <a href="" class="footer_link">Актеры</a>
+                <a href="" class="footer_link">Режиссеры</a>
+                <a href="" class="footer_link">Подборки</a>
+            </div>
+        </div>
+        <div class="footer_column3 footer_column">
+            <h2 class="footer_column-title">Информация</h2>
+            <div class="footer_column-item">
+                <a href="" class="footer_link">Пользовательское соглашение</a>
+                <a href="" class="footer_link">Политика конфиденциальности</a>
+                <a href="" class="footer_link">вопросы и ответы</a>
+            </div>
+            <div class="theme_toggle">
+                <p class="theme_toggle-text active">светло</p>
+                <button id="theme_toggle_theme" class="theme_content">
+                    <div class="theme_content-item"></div>
+                </button>
+                <p class="theme_toggle-text">темно</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'movies/js/genre_carousel.js' %}"></script>
+<script src="{% static 'movies/js/auth.js' %}"></script>
+<script src="{% static 'movies/js/main.js' %}"></script>
+<script src="{% static 'search.js' %}"></script>
+<script src="{% static 'users/js/personal.js' %}"></script>
+<script src="{% static 'movies/js/filter.js' %}"></script>
+<script>
+    document.getElementById('id_profile_picture').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const imgElement = document.getElementById('profile_picture');
+            imgElement.src = e.target.result;
+            imgElement.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+    function toggle_watchlist(id, event) {
+    event.stopPropagation();
+    event.preventDefault();
+        var movieId = id;
+        const csrftoken = getCookie('csrftoken');
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'toggle-movie-watchlist' %}",
+                data: {
+                    'movie_id': movieId,
+                    'csrfmiddlewaretoken': csrftoken
+                },
+                success: function(response) {
+                    var button = $('[data-movie-id="' + movieId + '"]');
+                    console.log(button);
+                    if (response.action === "added") {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#ff0000"/></svg>');
+                    } else {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#AAAAAA"/></svg>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert("Ошибка: " + error);
+                }
+            });
+    }
+
+    function toggle_watchlist_rec(id, event) {
+    event.stopPropagation();
+    event.preventDefault();
+        var movieId = id;
+        const csrftoken = getCookie('csrftoken');
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'toggle-movie-watchlist' %}",
+                data: {
+                    'movie_id': movieId,
+                    'csrfmiddlewaretoken': csrftoken
+                },
+                success: function(response) {
+                    var button = $('[data-movie-id="' + movieId + '"]');
+                    console.log(button);
+                    if (response.action === "added") {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#ff0000"/></svg>');
+                    } else {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#AAAAAA"/></svg>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert("Ошибка: " + error);
+                }
+            });
+    }
+
+    function toggle_watchlist_wl(id, event) {
+    event.stopPropagation();
+    event.preventDefault();
+        var movieId = id;
+        const csrftoken = getCookie('csrftoken');
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'toggle-movie-watchlist' %}",
+                data: {
+                    'movie_id': movieId,
+                    'csrfmiddlewaretoken': csrftoken
+                },
+                success: function(response) {
+                    var button = $('[data-movie-id="' + movieId + '"]');
+                    if (response.action === "added") {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="#ff0000" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#ff0000"/></svg>');
+                    } else {
+                        button.html('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.79041 9.06291L4.48086 9.45557L4.79041 9.06291C4.64258 8.94638 4.49291 8.83096 4.34295 8.71533C3.7166 8.23235 3.08523 7.74549 2.56261 7.157C1.932 6.44691 1.5 5.62835 1.5 4.56867C1.5 3.54 2.08107 2.68385 2.86414 2.3259C3.6157 1.98237 4.64276 2.06133 5.63976 3.09717L6 3.47145L6.36024 3.09717C7.35723 2.06133 8.38429 1.98237 9.13585 2.3259C9.91892 2.68385 10.5 3.54001 10.5 4.56867C10.5 5.62835 10.068 6.44691 9.4374 7.157C8.91478 7.74549 8.2834 8.23235 7.65705 8.71533C7.50709 8.83097 7.35742 8.94638 7.2096 9.06291C6.94544 9.27116 6.71753 9.44758 6.50014 9.57461C6.28258 9.70174 6.12307 9.75012 6 9.75012C5.87693 9.75012 5.71742 9.70174 5.49987 9.57462C5.28247 9.44759 5.05457 9.27116 4.79041 9.06291Z"stroke="#AAAAAA"/></svg>');
+                        var divId= "#movie-"+movieId;
+                        $(divId).remove();
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert("Ошибка: " + error);
+                }
+            });
+    }
+    function getCookie(name) {
+        var dc = document.cookie;
+        var prefix = name + "=";
+        var begin = dc.indexOf("; " + prefix);
+        if (begin == -1) {
+            begin = dc.indexOf(prefix);
+            if (begin != 0) return null;
+        }
+        else
+        {
+            begin += 2;
+            var end = document.cookie.indexOf(";", begin);
+            if (end == -1) {
+            end = dc.length;
+            }
+        }
+        // because unescape has been deprecated, replaced with decodeURI
+        //return unescape(dc.substring(begin + prefix.length, end));
+        return decodeURI(dc.substring(begin + prefix.length, end));
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{% for genre in genres %}
+<div class="items_modal"><p>{{genre.name}}</p> <input name="genres[]"
+                                                      value="{{genre.slug}}"
+                                                      type="checkbox"></div>
+{% endfor %}

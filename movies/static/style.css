@@ -1,0 +1,218 @@
+@import 'movies/css/reset.css';
+
+#lean_overlay {
+		position: fixed;
+		z-index: 9998;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		display: none;
+		backdrop-filter: blur(100px);
+}
+
+.popupContainer {
+		position: absolute;
+		width: 330px;
+		height: auto;
+		left: 45%;
+		top: 60px;
+}
+
+#modal_trigger {
+		width: 200px;
+		display: block;
+}
+
+.btn_red {
+		background: #ED6347;
+		color: #FFF;
+}
+
+.btn:hover {
+		background: #E4E4E2;
+}
+
+.btn_red:hover {
+		background: #C12B05;
+}
+
+a.btn {
+		color: #666;
+		text-align: center;
+		text-decoration: none;
+}
+
+a.btn_red {
+		color: #FFF;
+}
+
+.one_half {
+		width: 50%;
+		display: block;
+		float: left;
+}
+
+.one_half.last {
+		width: 45%;
+		margin-left: 5%;
+}
+
+.centeredText {
+		text-align: center;
+		margin: 20px 0;
+		clear: both;
+		overflow: hidden;
+		text-transform: uppercase;
+}
+
+.action_btns {
+		clear: both;
+		overflow: hidden;
+}
+
+.continue {
+    text-align: center;
+    width: 100%;
+    color: var(--white-color);
+    height: 16px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.action_btns a {
+		display: block;
+}
+/* User Login Form */
+
+.user_login {
+		display: flex;
+		flex-direction: column,
+        align-items: center
+}
+
+.mail_bar {
+    display: flex;
+    column-gap: 20px;
+}
+
+.mail_bar-content {
+    display: flex;
+    width: 400px;
+    height: 56px;
+    padding: 12px 20px;
+    border-radius: 16px;
+    background-color: var(--light-black-color);
+}
+
+.login-password {
+    padding: 16px 6px;
+    width: 100%;
+    color: var(--white-color);
+    height: 16px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.login-email {
+    padding: 16px 6px;
+    width: 100%;
+    color: var(--white-color);
+    height: 16px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.login-button {
+    padding: 16px 16px;
+    width: 400px;
+    height: 56px;
+    border-radius: 20px;
+    background-color: var(--blue-color);
+}
+
+.password_bar {
+    display: flex;
+    column-gap: 20px;
+}
+
+.password_bar-content {
+    display: flex;
+    width: 400px;
+    height: 56px;
+    padding: 12px 20px;
+    border-radius: 16px;
+    background-color: var(--light-black-color);
+}
+
+.login-form login-password {
+    padding: 6px;
+    width: 100%;
+    color: var(--white-color);
+    height: 16px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.switch-form {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.switch-form-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--blue-color);
+    transition: all 0.5s ease-out;
+}
+
+.title-container .title {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--white-color);
+    transition: all 0.5s ease-out;
+}
+
+.title-container .subtitle {
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--main-gray-color);
+    transition: all 0.5s ease-out;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.click_continue {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--main-gray-color);
+    transition: all 0.5s ease-out;
+}
+
+/* User Register Form */
+
+.user_register {
+        width:400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center
+
+}
+
+.register-name {
+    padding: 16px 6px;
+    width: 100%;
+    color: var(--white-color);
+    height: 16px;
+    font-weight: 500;
+    font-size: 16px;
+}
+

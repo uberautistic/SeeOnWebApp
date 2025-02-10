@@ -1,0 +1,2074 @@
+{
+  "docs": [
+    {
+      "status": null,
+      "rating": {
+        "kp": 8.666,
+        "imdb": 8.8,
+        "filmCritics": 8.2,
+        "russianFilmCritics": 80.9524,
+        "await": null
+      },
+      "votes": {
+        "kp": 988436,
+        "imdb": 2571043,
+        "filmCritics": 374,
+        "russianFilmCritics": 21,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/2439731/2a00000178c5fc1db03b03dceda170357652/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/2439731/2a00000178c5fc1db03b03dceda170357652/x1000"
+      },
+      "movieLength": 148,
+      "id": 447301,
+      "type": "movie",
+      "name": "Начало",
+      "description": "Кобб – талантливый вор, лучший из лучших в опасном искусстве извлечения: он крадет ценные секреты из глубин подсознания во время сна, когда человеческий разум наиболее уязвим. Редкие способности Кобба сделали его ценным игроком в привычном к предательству мире промышленного шпионажа, но они же превратили его в извечного беглеца и лишили всего, что он когда-либо любил. \n\nИ вот у Кобба появляется шанс исправить ошибки. Его последнее дело может вернуть все назад, но для этого ему нужно совершить невозможное – инициацию. Вместо идеальной кражи Кобб и его команда спецов должны будут провернуть обратное. Теперь их задача – не украсть идею, а внедрить ее. Если у них получится, это и станет идеальным преступлением. \n\nНо никакое планирование или мастерство не могут подготовить команду к встрече с опасным противником, который, кажется, предугадывает каждый их ход. Врагом, увидеть которого мог бы лишь Кобб.",
+      "year": 2010,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1629390/8ab9a119-dd74-44f0-baec-0629797483d7/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1629390/8ab9a119-dd74-44f0-baec-0629797483d7/x1000"
+      },
+      "genres": [
+        {
+          "name": "фантастика"
+        },
+        {
+          "name": "боевик"
+        },
+        {
+          "name": "триллер"
+        },
+        {
+          "name": "драма"
+        },
+        {
+          "name": "детектив"
+        }
+      ],
+      "countries": [
+        {
+          "name": "США"
+        },
+        {
+          "name": "Великобритания"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "Inception",
+      "enName": null,
+      "names": [
+        {
+          "name": "Начало"
+        },
+        {
+          "name": "Inception"
+        },
+        {
+          "name": "El Origen",
+          "language": "ES",
+          "type": null
+        },
+        {
+          "name": "인셉션",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "El origen",
+          "language": "MX",
+          "type": null
+        },
+        {
+          "name": "A Origem",
+          "language": "BR",
+          "type": null
+        },
+        {
+          "name": "Başlangıç",
+          "language": "TR",
+          "type": null
+        },
+        {
+          "name": "潛行凶間",
+          "language": "HK",
+          "type": null
+        },
+        {
+          "name": "盗梦空间",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "Eredet",
+          "language": "HU",
+          "type": null
+        },
+        {
+          "name": "Pirmsākums",
+          "language": "LV",
+          "type": null
+        },
+        {
+          "name": "จิตพิฆาตโลก",
+          "language": "TH",
+          "type": null
+        },
+        {
+          "name": "全面啟動",
+          "language": "TW",
+          "type": null
+        },
+        {
+          "name": "奠基",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "心灵犯案",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "记忆迷阵",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "记忆魔方",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "インセプション：2010",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "Kẻ Trộm Giấc Mơ",
+          "language": "VN",
+          "type": null
+        }
+      ],
+      "shortDescription": "Профессиональные воры внедряются в сон наследника огромной империи. Фантастический боевик Кристофера Нолана",
+      "ageRating": 12,
+      "ratingMpaa": "pg13",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/200035/2a00000178c5fc5e63481655114331b766a3/orig"
+      },
+      "top10": null,
+      "top250": 10,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.33,
+        "imdb": 7.8,
+        "filmCritics": 7.7,
+        "russianFilmCritics": 60,
+        "await": null
+      },
+      "votes": {
+        "kp": 13729,
+        "imdb": 78052,
+        "filmCritics": 149,
+        "russianFilmCritics": 5,
+        "await": 0
+      },
+      "backdrop": {
+        "url": null,
+        "previewUrl": null
+      },
+      "movieLength": 144,
+      "id": 400873,
+      "type": "movie",
+      "name": "Белая лента",
+      "description": "Деревня в протестантской северной Германии. 1913-1914 года. Канун первой мировой войны. История о детях и подростках церковного хора, поддерживаемого деревенским школьным учителем и их семьями: бароном, управляющим, пастором, доктором, акушеркой, землевладельцами. Происшедший загадочный несчастный случай постепенно принимает характер карательного ритуала. Кто стоит за этим всем?",
+      "year": 2009,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/4774061/92047e2f-d043-4867-82bf-56193a2c6649/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4774061/92047e2f-d043-4867-82bf-56193a2c6649/x1000"
+      },
+      "genres": [
+        {
+          "name": "триллер"
+        },
+        {
+          "name": "драма"
+        },
+        {
+          "name": "детектив"
+        }
+      ],
+      "countries": [
+        {
+          "name": "Германия"
+        },
+        {
+          "name": "Франция"
+        },
+        {
+          "name": "Италия"
+        },
+        {
+          "name": "Австрия"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "Das weiße Band - Eine deutsche Kindergeschichte",
+      "enName": null,
+      "names": [
+        {
+          "name": "Белая лента"
+        },
+        {
+          "name": "Das weiße Band - Eine deutsche Kindergeschichte"
+        },
+        {
+          "name": "白色緞帶",
+          "language": "TW",
+          "type": null
+        },
+        {
+          "name": "I lefki kordela",
+          "language": "GR",
+          "type": "Transliterated title"
+        },
+        {
+          "name": "Seret Lavan",
+          "language": "IL",
+          "type": "Hebrew title"
+        },
+        {
+          "name": "Det hvite båndet",
+          "language": "NO",
+          "type": null
+        },
+        {
+          "name": "Shiroi Ribon",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "Valge pael",
+          "language": "EE",
+          "type": null
+        },
+        {
+          "name": "Das weiße Band",
+          "language": "DE",
+          "type": "TV title"
+        },
+        {
+          "name": "Das weiße Band – Eine deutsche Kindergeschichte",
+          "language": "DE",
+          "type": null
+        },
+        {
+          "name": "La cinta blanca",
+          "language": "ES",
+          "type": null
+        },
+        {
+          "name": "Bílá stuha",
+          "language": "CZ",
+          "type": null
+        },
+        {
+          "name": "Biała wstążka",
+          "language": "PL",
+          "type": null
+        },
+        {
+          "name": "Biela stuha",
+          "language": "SK",
+          "type": null
+        },
+        {
+          "name": "Bijela vrpca",
+          "language": "HR",
+          "type": null
+        }
+      ],
+      "ageRating": 18,
+      "ratingMpaa": "r",
+      "shortDescription": null,
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://imagetmdb.com/t/p/original/7OKdXue209VfER8YPrKEvWYbVRL.png"
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 8.077,
+        "imdb": 8.1,
+        "filmCritics": 8.9,
+        "russianFilmCritics": 87.5,
+        "await": null
+      },
+      "votes": {
+        "kp": 634242,
+        "imdb": 806443,
+        "filmCritics": 384,
+        "russianFilmCritics": 8,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/374297/2a00000168effca5541c59e90bb0faa21ccc/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/374297/2a00000168effca5541c59e90bb0faa21ccc/x1000"
+      },
+      "movieLength": 95,
+      "id": 645118,
+      "type": "cartoon",
+      "name": "Головоломка",
+      "description": "В голове у обычной 11-летней школьницы Райли живут пять базовых эмоций: Радость, Грусть, Страх, Гнев и Отвращение. Каждый день они помогают девочке справляться с проблемами, руководя всеми её поступками. Вдруг выясняется, что Райли с родителями предстоит переезд из небольшого уютного городка в шумный и людный мегаполис. Каждая из эмоций считает, что именно она лучше прочих знает, что нужно делать в этой непростой ситуации, и в голове у девочки наступает полный хаос.",
+      "year": 2015,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/4303601/fe96f444-f022-4d14-a40f-7c1f35cc6ab8/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4303601/fe96f444-f022-4d14-a40f-7c1f35cc6ab8/x1000"
+      },
+      "genres": [
+        {
+          "name": "мультфильм"
+        },
+        {
+          "name": "семейный"
+        },
+        {
+          "name": "комедия"
+        },
+        {
+          "name": "фэнтези"
+        }
+      ],
+      "countries": [
+        {
+          "name": "США"
+        }
+      ],
+      "typeNumber": 3,
+      "alternativeName": "Inside Out",
+      "enName": null,
+      "names": [
+        {
+          "name": "Головоломка"
+        },
+        {
+          "name": "Inside Out"
+        },
+        {
+          "name": "Ma-Hud-Sa-Jan-A-Rom-On-La-Weng",
+          "language": "TH",
+          "type": null
+        },
+        {
+          "name": "Intensamente",
+          "language": "EC",
+          "type": null
+        },
+        {
+          "name": "Intensa-mente",
+          "language": "MX",
+          "type": null
+        },
+        {
+          "name": "W głowie się nie mieści",
+          "language": "PL",
+          "type": null
+        },
+        {
+          "name": "Ters Yüz",
+          "language": "TR",
+          "type": null
+        },
+        {
+          "name": "Alles steht Kopf",
+          "language": "DE",
+          "type": null
+        },
+        {
+          "name": "Vice-versa",
+          "language": "FR",
+          "type": null
+        },
+        {
+          "name": "Sens dessus dessous",
+          "language": "CA",
+          "type": null
+        },
+        {
+          "name": "Del revés",
+          "language": "ES",
+          "type": null
+        },
+        {
+          "name": "Tərs Üz",
+          "language": "AZ",
+          "type": null
+        }
+      ],
+      "ageRating": 6,
+      "ratingMpaa": "pg",
+      "shortDescription": "Пять человеческих эмоций должны договориться и помочь девочке справиться с собой. «Оскар» за лучший мультфильм",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/224348/2a00000178cac49aa0c6e467653242bb4da5/orig"
+      },
+      "top10": null,
+      "top250": 248,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.853,
+        "imdb": 8,
+        "filmCritics": 7.8,
+        "russianFilmCritics": 83.3333,
+        "await": null
+      },
+      "votes": {
+        "kp": 748331,
+        "imdb": 1280479,
+        "filmCritics": 340,
+        "russianFilmCritics": 18,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/1531675/2a00000168e5ccf51bd49e47747b40f6e487/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/1531675/2a00000168e5ccf51bd49e47747b40f6e487/x1000"
+      },
+      "movieLength": 121,
+      "id": 689066,
+      "type": "movie",
+      "name": "Стражи Галактики",
+      "description": "Отважному путешественнику Питеру Квиллу попадает в руки таинственный артефакт, принадлежащий могущественному и безжалостному злодею Ронану, строящему коварные планы по захвату Вселенной. Питер оказывается в центре межгалактической охоты, где жертва — он сам.\n\nЕдинственный способ спасти свою жизнь — объединиться с четверкой нелюдимых изгоев: воинственным енотом по кличке Ракета, человекоподобным деревом Грутом, смертельно опасной Гаморой и одержимым жаждой мести Драксом, также известным как Разрушитель. Когда Квилл понимает, какой силой обладает украденный артефакт и какую опасность он представляет для вселенной, одиночка пойдет на все, чтобы сплотить случайных союзников для решающей битвы за судьбу галактики.",
+      "year": 2014,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1773646/2e6ab20b-7cf1-49e7-b465-bd5a71c13fa3/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1773646/2e6ab20b-7cf1-49e7-b465-bd5a71c13fa3/x1000"
+      },
+      "genres": [
+        {
+          "name": "фантастика"
+        },
+        {
+          "name": "боевик"
+        },
+        {
+          "name": "приключения"
+        },
+        {
+          "name": "комедия"
+        }
+      ],
+      "countries": [
+        {
+          "name": "США"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "Guardians of the Galaxy",
+      "enName": null,
+      "names": [
+        {
+          "name": "Стражи Галактики"
+        },
+        {
+          "name": "Guardians of the Galaxy"
+        },
+        {
+          "name": "G.O.T.G.",
+          "language": "US",
+          "type": "promotional abbreviation"
+        },
+        {
+          "name": "Marvel's Guardians of the Galaxy",
+          "language": "US",
+          "type": null
+        },
+        {
+          "name": "마블 가디언즈 오브 갤럭시",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "Стражи галактики",
+          "language": "RU",
+          "type": null
+        },
+        {
+          "name": "Marvel Studios' Guardians of the Galaxy",
+          "language": "US",
+          "type": null
+        },
+        {
+          "name": "银河护卫队",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "Guardians Of The Galaxy: Vệ Binh Dải Ngân Hà",
+          "language": "VN",
+          "type": null
+        },
+        {
+          "name": "Guardians of the Galaxy Vol. 1",
+          "language": "US",
+          "type": null
+        },
+        {
+          "name": "Les Gardiens De La Galaxie",
+          "language": "FR",
+          "type": null
+        },
+        {
+          "name": "Guardiões da Galáxia da Marvel Studios",
+          "language": "BR",
+          "type": null
+        },
+        {
+          "name": "שומרי הגלאקסיה: חלק 1",
+          "language": "IL",
+          "type": null
+        },
+        {
+          "name": "การ์เดี้ยนส์ ออฟ เดอะ กาแล็กซี่",
+          "language": "TH",
+          "type": "transliterate"
+        },
+        {
+          "name": "รวมพันธุ์นักสู้พิทักษ์จักรวาล",
+          "language": "TH",
+          "type": null
+        },
+        {
+          "name": "Գալակտիկայի պահապանները",
+          "language": "AM",
+          "type": null
+        },
+        {
+          "name": "Галактика сақшылары",
+          "language": "KZ",
+          "type": null
+        },
+        {
+          "name": "Guardianes de la Galaxia",
+          "language": "ES",
+          "type": null
+        },
+        {
+          "name": "星際異攻隊",
+          "language": "TW",
+          "type": null
+        },
+        {
+          "name": "ガーディアンズ・オブ・ギャラクシー",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "ガーディアンズ・オブ・ギャラクシー：2014",
+          "language": "JP",
+          "type": null
+        }
+      ],
+      "ratingMpaa": "pg13",
+      "shortDescription": "Питер Квилл и горстка неземных лузеров спасают артефакт. Крис Пратт в фильме Джеймса Ганна по комиксу Marvel",
+      "ticketsOnSale": false,
+      "ageRating": 12,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/2385704/2a0000016e11e92154e4c2189debbfb0af18/orig"
+      },
+      "top10": null,
+      "top250": 191,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.191,
+        "imdb": 7.7,
+        "filmCritics": 8.1,
+        "russianFilmCritics": 91.6667,
+        "await": null
+      },
+      "votes": {
+        "kp": 150027,
+        "imdb": 482045,
+        "filmCritics": 281,
+        "russianFilmCritics": 12,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/224348/2a0000016225231aeba1562061f78264d56d/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/224348/2a0000016225231aeba1562061f78264d56d/x1000"
+      },
+      "movieLength": 121,
+      "id": 817324,
+      "type": "movie",
+      "name": "Убийца",
+      "description": "Безлюдные пустоши, по которым проходит граница между Мексикой и США, — это территория без правил, поле битвы между мексиканскими наркокартелями и американскими спецслужбами. Агент ФБР Кейт Мэйсер, которая работает в приграничных районах, старается придерживаться собственных идеалов, хотя и начинает ощущать, что исход войны с наркотрафиком складывается не в пользу служителей закона. \nОднажды ей предоставляется шанс принять участие в работе элитного подразделения по борьбе с наркотиками, возглавляемого агентом Мэттом Грейвером. Самый загадочный участник команды — местный консультант, человек без имени, привычек, и, кажется, без прошлого. Его истинное лицо откроется только в ходе рискованной операции, во время которой Кейт будет вынуждена поступиться собственными принципами, чтобы остаться в живых.",
+      "year": 2015,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1898899/b3fe0bd8-7653-40bd-951d-4fe95f8c58fb/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1898899/b3fe0bd8-7653-40bd-951d-4fe95f8c58fb/x1000"
+      },
+      "genres": [
+        {
+          "name": "боевик"
+        },
+        {
+          "name": "триллер"
+        },
+        {
+          "name": "драма"
+        },
+        {
+          "name": "криминал"
+        },
+        {
+          "name": "детектив"
+        }
+      ],
+      "countries": [
+        {
+          "name": "США"
+        },
+        {
+          "name": "Мексика"
+        },
+        {
+          "name": "Гонконг"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "Sicario",
+      "enName": null,
+      "names": [
+        {
+          "name": "Убийца"
+        },
+        {
+          "name": "Sicario"
+        },
+        {
+          "name": "Borderline",
+          "language": "JP",
+          "type": "English title"
+        },
+        {
+          "name": "Sicario the Mexican Hitman",
+          "language": "MY",
+          "type": "alternate English title"
+        },
+        {
+          "name": "Sicario 1",
+          "language": "US",
+          "type": null
+        },
+        {
+          "name": "시카리오: 암살자의 도시",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "Sicario 2015",
+          "language": "JP",
+          "type": null
+        }
+      ],
+      "ageRating": 18,
+      "ratingMpaa": "r",
+      "shortDescription": "Агент ФБР участвует в спецоперации — весьма неоднозначной. Ловко сконструированный триллер Дени Вильнёва",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://imagetmdb.com/t/p/original/eLRCr2HctuoBum1e4vB0336wALT.png"
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 8.177,
+        "imdb": 8.4,
+        "filmCritics": 8.8,
+        "russianFilmCritics": 100,
+        "await": null
+      },
+      "votes": {
+        "kp": 549960,
+        "imdb": 680739,
+        "filmCritics": 400,
+        "russianFilmCritics": 11,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/1531675/2a00000178cb2efc9762720b53a3b57633ef/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/1531675/2a00000178cb2efc9762720b53a3b57633ef/x1000"
+      },
+      "movieLength": 117,
+      "id": 920265,
+      "type": "cartoon",
+      "name": "Человек-паук: Через вселенные",
+      "description": "Мы всё знаем о Питере Паркере. Он спас город, влюбился, а потом спасал город снова и снова… Но все это – в нашем измерении. А что если в результате работы гигантского коллайдера откроется окно из одного измерения в другое? Найдется ли в нем свой Человек-паук? И как он будет выглядеть? Приготовьтесь к тому, что в разных вселенных могут быть разные Люди-пауки и однажды им придется собраться вместе для борьбы с почти непобедимым врагом.",
+      "year": 2018,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1900788/64417bd3-838b-4910-a9f4-c278c509d568/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1900788/64417bd3-838b-4910-a9f4-c278c509d568/x1000"
+      },
+      "genres": [
+        {
+          "name": "мультфильм"
+        },
+        {
+          "name": "фантастика"
+        },
+        {
+          "name": "фэнтези"
+        },
+        {
+          "name": "боевик"
+        },
+        {
+          "name": "комедия"
+        },
+        {
+          "name": "приключения"
+        },
+        {
+          "name": "семейный"
+        }
+      ],
+      "countries": [
+        {
+          "name": "Канада"
+        },
+        {
+          "name": "США"
+        }
+      ],
+      "typeNumber": 3,
+      "alternativeName": "Spider-Man: Into the Spider-Verse",
+      "enName": null,
+      "names": [
+        {
+          "name": "Человек-паук: Через вселенные"
+        },
+        {
+          "name": "Spider-Man: Into the Spider-Verse"
+        },
+        {
+          "name": "Animated Spider-Man",
+          "language": "US",
+          "type": "working title"
+        },
+        {
+          "name": "ספיידרמן: מימד העכביש",
+          "language": "IL",
+          "type": null
+        },
+        {
+          "name": "Spider Man : nouvelle génération",
+          "language": "FR",
+          "type": null
+        },
+        {
+          "name": "سبايدر مان: في عالم العنكبوت",
+          "language": "EG",
+          "type": null
+        },
+        {
+          "name": "Spiderman: Into the Spider-Verse",
+          "language": "US",
+          "type": null
+        },
+        {
+          "name": "Een Nieuw Universum",
+          "language": "NL",
+          "type": null
+        },
+        {
+          "name": "蜘蛛俠：跳入蜘蛛宇宙",
+          "language": "HK",
+          "type": null
+        },
+        {
+          "name": "뉴스파",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "Pókember: Irány a Pókverzum!",
+          "language": "HU",
+          "type": null
+        },
+        {
+          "name": "ობობა-კაცი: ობობის სამყაროში",
+          "language": "GE",
+          "type": null
+        },
+        {
+          "name": "სპაიდერმენი: ობობის სამყაროში",
+          "language": "GE",
+          "type": null
+        },
+        {
+          "name": "Homem Aranha no Aranhaverso",
+          "language": "BR",
+          "type": null
+        },
+        {
+          "name": "Spider-Man Uniwersum",
+          "language": "PL",
+          "type": null
+        },
+        {
+          "name": "Spider-Man: New Universe",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "蜘蛛人：新宇宙",
+          "language": "TW",
+          "type": null
+        },
+        {
+          "name": "Spider-Man: Un Nuevo Universo",
+          "language": "ES",
+          "type": null
+        },
+        {
+          "name": "Người Nhện: Vũ Trụ Mới",
+          "language": "VN",
+          "type": null
+        },
+        {
+          "name": "スパイダーマン：スパイダーバース：2018",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "Ämblikmees: Uus universum",
+          "language": "EE",
+          "type": null
+        },
+        {
+          "name": "Homem-Aranha no Aranhaverso",
+          "language": "PT",
+          "type": null
+        },
+        {
+          "name": "Spider-Man: Novi svet",
+          "language": "SI",
+          "type": null
+        },
+        {
+          "name": "Spider-Man：Into the Spider-Verse",
+          "language": "US",
+          "type": "Full Title with Alt Char '：' for Windows filenames"
+        }
+      ],
+      "ageRating": 6,
+      "ratingMpaa": "pg",
+      "shortDescription": "Пауки из разных измерений объединяются перед общей угрозой. Изобретательный кинокомикс с «Оскаром» за анимацию",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/223007/2a00000178cb2f20248996554b199af049e5/orig"
+      },
+      "top10": null,
+      "top250": 127,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "id": 309423,
+      "type": "movie",
+      "name": "После прочтения сжечь",
+      "rating": {
+        "kp": 6.866,
+        "imdb": 7,
+        "filmCritics": 6.9,
+        "russianFilmCritics": 0,
+        "await": null
+      },
+      "description": "Оззи уволили с поста начальника Балканского направления ЦРУ. Пытаясь преодолеть кризис, он берется за мемуары, содержащие в том числе и секретную информацию. И надо же было такому случиться, что диск с этими данными был потерян в раздевалке спортивного клуба. Находка попадает в руки недалёкого тренера Чеда и его подруги Линды. Вместе они решают шантажировать бывшего агента, и начинается такая заварушка, в которой не сможет разобраться даже ЦРУ.",
+      "votes": {
+        "kp": 124733,
+        "imdb": 355667,
+        "filmCritics": 248,
+        "russianFilmCritics": 2,
+        "await": 0
+      },
+      "year": 2008,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1946459/f7cdf889-05fd-4f49-a54f-5c0851b072b5/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1946459/f7cdf889-05fd-4f49-a54f-5c0851b072b5/x1000"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        },
+        {
+          "name": "комедия"
+        },
+        {
+          "name": "криминал"
+        },
+        {
+          "name": "триллер"
+        }
+      ],
+      "countries": [
+        {
+          "name": "США"
+        },
+        {
+          "name": "Великобритания"
+        },
+        {
+          "name": "Франция"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "Burn After Reading",
+      "backdrop": {
+        "url": null,
+        "previewUrl": null
+      },
+      "enName": null,
+      "movieLength": 92,
+      "names": [
+        {
+          "name": "После прочтения сжечь"
+        },
+        {
+          "name": "Burn After Reading"
+        },
+        {
+          "name": "После прочтения cжечь",
+          "language": "RU",
+          "type": null
+        },
+        {
+          "name": "Прочитати і спалити",
+          "language": "UA",
+          "type": null
+        },
+        {
+          "name": "Põletada peale lugemist",
+          "language": "EE",
+          "type": null
+        },
+        {
+          "name": "Spaliti nakon čitanja",
+          "language": "HR",
+          "type": null
+        },
+        {
+          "name": "Burn After Reading - Wer verbrennt sich hier die Finger?",
+          "language": "DE",
+          "type": null
+        },
+        {
+          "name": "Kafto aporrito",
+          "language": "GR",
+          "type": null
+        },
+        {
+          "name": "Kauto aporrito",
+          "language": "GR",
+          "type": null
+        },
+        {
+          "name": "Lire et détruire",
+          "language": "FR",
+          "type": null
+        },
+        {
+          "name": "Quemar después de leer",
+          "language": "ES",
+          "type": "Castilian Spanish"
+        }
+      ],
+      "status": null,
+      "ageRating": 16,
+      "ratingMpaa": "r",
+      "shortDescription": null,
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://imagetmdb.com/t/p/original/wIPJHChwRRfD4qTbsNxYagr6CuS.png"
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.997,
+        "imdb": 8.4,
+        "filmCritics": 7.3,
+        "russianFilmCritics": 89.2857,
+        "await": null
+      },
+      "votes": {
+        "kp": 638808,
+        "imdb": 1562070,
+        "filmCritics": 598,
+        "russianFilmCritics": 28,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/1534341/2a0000016f0e2ff213c7112837259eaa4b4e/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/1534341/2a0000016f0e2ff213c7112837259eaa4b4e/x1000"
+      },
+      "movieLength": 122,
+      "id": 1048334,
+      "type": "movie",
+      "name": "Джокер",
+      "description": "Готэм, начало 1980-х годов. Комик Артур Флек живет с больной матерью, которая с детства учит его «ходить с улыбкой». Пытаясь нести в мир хорошее и дарить людям радость, Артур сталкивается с человеческой жестокостью и постепенно приходит к выводу, что этот мир получит от него не добрую улыбку, а ухмылку злодея Джокера.",
+      "year": 2019,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1946459/84934543-5991-4c93-97eb-beb6186a3ad7/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1946459/84934543-5991-4c93-97eb-beb6186a3ad7/x1000"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        },
+        {
+          "name": "криминал"
+        },
+        {
+          "name": "триллер"
+        }
+      ],
+      "countries": [
+        {
+          "name": "США"
+        },
+        {
+          "name": "Канада"
+        },
+        {
+          "name": "Австралия"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "Joker",
+      "enName": null,
+      "names": [
+        {
+          "name": "Джокер"
+        },
+        {
+          "name": "Joker"
+        },
+        {
+          "name": "ジョーカー：2019",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "JOKER小丑",
+          "language": "HK",
+          "type": null
+        },
+        {
+          "name": "小丑",
+          "language": "TW",
+          "type": null
+        },
+        {
+          "name": "ジョーカー",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "Guasón",
+          "language": "MX",
+          "type": null
+        },
+        {
+          "name": "जोकर",
+          "language": "IN",
+          "type": "Hindi title"
+        },
+        {
+          "name": "조커",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "Coringa",
+          "language": "BR",
+          "type": null
+        },
+        {
+          "name": "جوكر",
+          "language": "SA",
+          "type": null
+        },
+        {
+          "name": "Guasón",
+          "language": "AR",
+          "type": null
+        },
+        {
+          "name": "Guasón",
+          "language": "CO",
+          "type": null
+        },
+        {
+          "name": "โจ๊กเกอร์",
+          "language": "TH",
+          "type": null
+        },
+        {
+          "name": "جوكر",
+          "language": "AE",
+          "type": null
+        },
+        {
+          "name": "جوكر",
+          "language": "EG",
+          "type": null
+        },
+        {
+          "name": "Guasón",
+          "language": "CL",
+          "type": null
+        },
+        {
+          "name": "Guasón",
+          "language": "PE",
+          "type": null
+        }
+      ],
+      "ageRating": 18,
+      "ratingMpaa": "r",
+      "shortDescription": "Как неудачливый комик стал самым опасным человеком в Готэме. Бенефис Хоакина Феникса и «Оскар» за саундтрек",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://image.openmoviedb.com/tmdb-images/original/tDzUDdxHk4yNcZskimqHQbD1JZ1.png",
+        "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/tDzUDdxHk4yNcZskimqHQbD1JZ1.png"
+      },
+      "top10": null,
+      "top250": 141,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.674,
+        "imdb": 8,
+        "filmCritics": 7.7,
+        "russianFilmCritics": 70.8333,
+        "await": null
+      },
+      "votes": {
+        "kp": 792681,
+        "imdb": 915620,
+        "filmCritics": 514,
+        "russianFilmCritics": 24,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/1672343/2a0000017c9a7befa597b53c1700dcaa89b7/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/1672343/2a0000017c9a7befa597b53c1700dcaa89b7/x1000"
+      },
+      "movieLength": 155,
+      "id": 409424,
+      "type": "movie",
+      "name": "Дюна",
+      "description": "Наследник знаменитого дома Атрейдесов Пол отправляется вместе с семьей на одну из самых опасных планет во Вселенной — Арракис. Здесь нет ничего, кроме песка, палящего солнца, гигантских чудовищ и основной причины межгалактических конфликтов — невероятно ценного ресурса, который называется меланж. В результате захвата власти Пол вынужден бежать и скрываться, и это становится началом его эпического путешествия. Враждебный мир Арракиса приготовил для него множество тяжелых испытаний, но только тот, кто готов взглянуть в глаза своему страху, достоин стать избранным.",
+      "year": 2021,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/4303601/9eb762d6-4cdd-464f-9937-aebf30067acc/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4303601/9eb762d6-4cdd-464f-9937-aebf30067acc/x1000"
+      },
+      "genres": [
+        {
+          "name": "фантастика"
+        },
+        {
+          "name": "боевик"
+        },
+        {
+          "name": "драма"
+        },
+        {
+          "name": "приключения"
+        }
+      ],
+      "countries": [
+        {
+          "name": "США"
+        },
+        {
+          "name": "Канада"
+        },
+        {
+          "name": "Венгрия"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "Dune",
+      "enName": null,
+      "names": [
+        {
+          "name": "Дюна"
+        },
+        {
+          "name": "Dune: Part One"
+        },
+        {
+          "name": "デューン",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "듄",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "Duna",
+          "language": "BR",
+          "type": null
+        },
+        {
+          "name": "Dune։ Part One",
+          "language": "US",
+          "type": null
+        },
+        {
+          "name": "Dune։ Part One 3D",
+          "language": "US",
+          "type": "3D version"
+        },
+        {
+          "name": "חולית: חלק ראשון",
+          "language": "IL",
+          "type": null
+        },
+        {
+          "name": "デューン 砂の惑星",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "DUNE デューン 砂の惑星",
+          "language": "JP",
+          "type": null
+        },
+        {
+          "name": "ดูน",
+          "language": "TH",
+          "type": null
+        },
+        {
+          "name": "Hành Tinh Cát",
+          "language": "VN",
+          "type": null
+        },
+        {
+          "name": "Dune: 1",
+          "language": "ES",
+          "type": "Castellano"
+        },
+        {
+          "name": "Duna: Parte Um",
+          "language": "BR",
+          "type": null
+        },
+        {
+          "name": "Duna: Primeira Part",
+          "language": "BR",
+          "type": "Voice-over (TV Globo)"
+        },
+        {
+          "name": "沙丘",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "Dune, première partie",
+          "language": "FR",
+          "type": null
+        },
+        {
+          "name": "Duna: Pjesa e Parë",
+          "language": "AL",
+          "type": null
+        },
+        {
+          "name": "Dune: Parte uno",
+          "language": "ES",
+          "type": null
+        },
+        {
+          "name": "Duna: Parte 1",
+          "language": "BR",
+          "type": null
+        },
+        {
+          "name": "Dune 1",
+          "language": "US",
+          "type": "Series Title"
+        },
+        {
+          "name": "Dune：Part One",
+          "language": "US",
+          "type": "Full On Screen Title With Alt Char Set Colon for Windows Filenames"
+        },
+        {
+          "name": "დიუნი",
+          "language": "GE",
+          "type": null
+        }
+      ],
+      "ageRating": 12,
+      "ratingMpaa": "pg13",
+      "shortDescription": "Атрейдесы прибывают на планету, где им никто не рад. Фантастический эпос Дени Вильнёва с шестью «Оскарами»",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://image.openmoviedb.com/tmdb-images/original/s2IfGSnQ7Yf5s6NjLlR8GmubhHC.png",
+        "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/s2IfGSnQ7Yf5s6NjLlR8GmubhHC.png"
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "id": 1354524,
+      "type": "movie",
+      "name": "Банши Инишерина",
+      "rating": {
+        "kp": 7.489,
+        "imdb": 7.7,
+        "filmCritics": 8.7,
+        "russianFilmCritics": 94.1176,
+        "await": null
+      },
+      "description": "1923 год, островок Инишерин возле западного побережья Ирландии. Народу здесь мало, и компанию простоватому доброжелательному фермеру Подрику составляют рассудительная незамужняя сестра, недалекий сын полицейского, миниатюрная ослица Дженни и, главное, его лучший друг — пожилой скрипач Колм. Однажды Подрик, следуя ежедневным маршрутом, заходит за Колмом по дороге в паб, а тот вдруг отказывается не только выпивать, но даже разговаривать с ним. Прижатый к стенке Колм сообщает, что считает Подрика скучным, а если тот продолжит к нему приставать, он отрежет себе палец.",
+      "votes": {
+        "kp": 77889,
+        "imdb": 267458,
+        "filmCritics": 373,
+        "russianFilmCritics": 17,
+        "await": 0
+      },
+      "year": 2022,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/6201401/d5071e48-809f-43dd-ba46-6bb0814963b7/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/6201401/d5071e48-809f-43dd-ba46-6bb0814963b7/x1000"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        },
+        {
+          "name": "комедия"
+        }
+      ],
+      "countries": [
+        {
+          "name": "Великобритания"
+        },
+        {
+          "name": "США"
+        },
+        {
+          "name": "Ирландия"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "The Banshees of Inisherin",
+      "enName": null,
+      "movieLength": 114,
+      "names": [
+        {
+          "name": "Банши Инишерина"
+        },
+        {
+          "name": "The Banshees of Inisherin"
+        },
+        {
+          "name": "Inisherini hinged",
+          "language": "EE",
+          "type": null
+        },
+        {
+          "name": "Inišerinas Banšī",
+          "language": "LV",
+          "type": null
+        },
+        {
+          "name": "伊尼舍林的女妖",
+          "language": "HK",
+          "type": null
+        },
+        {
+          "name": "Duchy Inisherin",
+          "language": "PL",
+          "type": null
+        },
+        {
+          "name": "Almas en pena de Inisherin",
+          "language": "ES",
+          "type": null
+        }
+      ],
+      "ratingMpaa": "r",
+      "shortDescription": null,
+      "status": null,
+      "ticketsOnSale": false,
+      "ageRating": null,
+      "backdrop": {
+        "url": null,
+        "previewUrl": null
+      },
+      "logo": {
+        "url": "https://image.openmoviedb.com/tmdb-images/original/oXu9YGlAMyIgJSifbPjaLOV8L2X.png",
+        "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/oXu9YGlAMyIgJSifbPjaLOV8L2X.png"
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.123,
+        "imdb": 7.7,
+        "filmCritics": 8.1,
+        "russianFilmCritics": 62.5,
+        "await": null
+      },
+      "votes": {
+        "kp": 5016,
+        "imdb": 19564,
+        "filmCritics": 63,
+        "russianFilmCritics": 8,
+        "await": 0
+      },
+      "backdrop": {
+        "url": null,
+        "previewUrl": null
+      },
+      "movieLength": 155,
+      "id": 434189,
+      "type": "movie",
+      "name": "Туринская лошадь",
+      "description": "В 1889 году на улице Турина случилось странное происшествие. Кучер хлестал кнутом старую лошадь, которая отказывалась тронуться с места. Неожиданно к повозке подбежал хорошо одетый господин с пышными усами и обнял животное за шею, при этом горько зарыдав. Это был не кто иной, как всемирно известный философ Фридрих Ницше. Его с трудом увели от лошади, а когда привели домой, выяснилось, что он не в себе. Ницше поместили в лечебницу для душевнобольных, где он провел остаток жизни.\n\nНо что же случилось с лошадью и ее хозяином?",
+      "year": 2011,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1898899/ff6e10e5-6e80-46b6-89f0-b794950bbfe7/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1898899/ff6e10e5-6e80-46b6-89f0-b794950bbfe7/x1000"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        }
+      ],
+      "countries": [
+        {
+          "name": "Венгрия"
+        },
+        {
+          "name": "Франция"
+        },
+        {
+          "name": "Германия"
+        },
+        {
+          "name": "Швейцария"
+        },
+        {
+          "name": "США"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "A torinói ló",
+      "enName": null,
+      "names": [
+        {
+          "name": "Туринская лошадь"
+        },
+        {
+          "name": "A torinói ló"
+        },
+        {
+          "name": "Koń turyński",
+          "language": "PL",
+          "type": null
+        },
+        {
+          "name": "El caballo de Turín",
+          "language": "ES",
+          "type": null
+        },
+        {
+          "name": "Das Turiner Pferd",
+          "language": "DE",
+          "type": null
+        },
+        {
+          "name": "토리노의 말",
+          "language": "KR",
+          "type": null
+        }
+      ],
+      "ageRating": 16,
+      "ratingMpaa": null,
+      "shortDescription": null,
+      "ticketsOnSale": false,
+      "logo": {
+        "url": null
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 6.903,
+        "imdb": 7,
+        "filmCritics": 7.9,
+        "russianFilmCritics": 91.6667,
+        "await": null
+      },
+      "votes": {
+        "kp": 31817,
+        "imdb": 150766,
+        "filmCritics": 223,
+        "russianFilmCritics": 12,
+        "await": 0
+      },
+      "backdrop": {
+        "url": null,
+        "previewUrl": null
+      },
+      "movieLength": 106,
+      "id": 416275,
+      "type": "movie",
+      "name": "Серьёзный человек",
+      "description": "Средний Запад, 1967 год. Профессор еврейского колледжа Ларри Гопник начинает задаваться экзистенциальными вопросами, когда у него появляется масса проблем: жена требует развода, дети воруют деньги из кошелька, на постоянное место жительства заявился брат-бездельник, анонимки угрожают карьере, настырный студент хочет получить высокую оценку, а привлекательная соседка оголяется при любом удобном случае. В поисках ответов Ларри обращается к раввинам.",
+      "year": 2009,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1599028/dc345050-eb2f-4472-a059-2f44fef4cf96/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1599028/dc345050-eb2f-4472-a059-2f44fef4cf96/x1000"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        },
+        {
+          "name": "комедия"
+        }
+      ],
+      "countries": [
+        {
+          "name": "Великобритания"
+        },
+        {
+          "name": "Франция"
+        },
+        {
+          "name": "США"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "A Serious Man",
+      "enName": null,
+      "names": [
+        {
+          "name": "Серьёзный человек"
+        },
+        {
+          "name": "A Serious Man"
+        },
+        {
+          "name": "正经好人",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "非常憨男离奇失婚",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "Un Tipo Serio",
+          "language": "SV",
+          "type": null
+        },
+        {
+          "name": "Egy komoly ember",
+          "language": "HU",
+          "type": null
+        },
+        {
+          "name": "Ενας Σοβαρός Ανθρωπος",
+          "language": "GR",
+          "type": "Greek"
+        },
+        {
+          "name": "시리어스 맨",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "Serious Man, A",
+          "language": "US",
+          "type": null
+        },
+        {
+          "name": "Um Homem Sério",
+          "language": "PT",
+          "type": "Comédia, Drama"
+        }
+      ],
+      "ageRating": 16,
+      "ratingMpaa": "r",
+      "shortDescription": null,
+      "ticketsOnSale": false,
+      "logo": {
+        "url": null
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.213,
+        "imdb": 7.5,
+        "filmCritics": 7,
+        "russianFilmCritics": 100,
+        "await": null
+      },
+      "votes": {
+        "kp": 37051,
+        "imdb": 72601,
+        "filmCritics": 90,
+        "russianFilmCritics": 3,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/224348/2a0000016235c66b81b09755389e8edde77f/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/224348/2a0000016235c66b81b09755389e8edde77f/x1000"
+      },
+      "movieLength": 131,
+      "id": 784,
+      "type": "movie",
+      "name": "Пианистка",
+      "description": "Эрика - профессор Венской консерватории. Но сама она далека от гармонии небесных сфер. Женщина всё ещё спит в одной кровати со старой матерью, тайно посещает порномагазины и под кроватью держит набор садомазохистских инструментов. Когда же в неё влюбляется один из учеников, она шокирует его своей реакцией и поведением.",
+      "year": 2001,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1704946/6c1a8e0f-a084-4566-a1b6-b9f52ddc8030/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1704946/6c1a8e0f-a084-4566-a1b6-b9f52ddc8030/x1000"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        },
+        {
+          "name": "музыка"
+        }
+      ],
+      "countries": [
+        {
+          "name": "Франция"
+        },
+        {
+          "name": "Австрия"
+        },
+        {
+          "name": "Германия"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "La Pianiste",
+      "enName": null,
+      "names": [
+        {
+          "name": "Пианистка"
+        },
+        {
+          "name": "La Pianiste"
+        },
+        {
+          "name": "The Piano Player",
+          "language": "US",
+          "type": null
+        },
+        {
+          "name": "The Piano Teacher",
+          "language": "GB",
+          "type": null
+        },
+        {
+          "name": "La profesora de piano",
+          "language": "AR",
+          "type": null
+        },
+        {
+          "name": "Klaveriõpetaja",
+          "language": "EE",
+          "type": null
+        },
+        {
+          "name": "Pianolärarinnan",
+          "language": "FI",
+          "type": "Swedish title"
+        },
+        {
+          "name": "I daskala tou pianou",
+          "language": "GR",
+          "type": null
+        },
+        {
+          "name": "Profesorka klavira",
+          "language": "RS",
+          "type": null
+        },
+        {
+          "name": "La Pianista",
+          "language": "MX",
+          "type": null
+        },
+        {
+          "name": "피아니스트",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "Pianisten",
+          "language": "SE",
+          "type": null
+        },
+        {
+          "name": "Die Klavierspielerin",
+          "language": "DE",
+          "type": null
+        },
+        {
+          "name": "Піаністка",
+          "language": "UA",
+          "type": null
+        },
+        {
+          "name": "Klavierskolotāja",
+          "language": "LV",
+          "type": null
+        },
+        {
+          "name": "La pianista",
+          "language": "ES",
+          "type": "Castilian Spanish"
+        }
+      ],
+      "ageRating": 18,
+      "ratingMpaa": "r",
+      "shortDescription": "Студенту узнает шокирующую правду о своей преподавательнице. Невероятная Изабель Юппер в драме Михаэля Ханеке",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/2439731/2a00000175bbe5f2daab0d278c650afa0a33/orig"
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.652,
+        "imdb": 7.7,
+        "filmCritics": 8.5,
+        "russianFilmCritics": 87.5,
+        "await": null
+      },
+      "votes": {
+        "kp": 221360,
+        "imdb": 669388,
+        "filmCritics": 365,
+        "russianFilmCritics": 24,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/223007/2a00000161fc73e871c385873b4a2822c87b/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/223007/2a00000161fc73e871c385873b4a2822c87b/x1000"
+      },
+      "movieLength": 119,
+      "id": 722827,
+      "type": "movie",
+      "name": "Бёрдмэн",
+      "description": "В центре сюжета бывший актер, некогда сыгравший роль популярного супергероя Бёрдмэна, и теперь, переступая через свое эго, он решает принять участие в новой бродвейской постановке с целью вернуть себе былую славу, блеск и величие.",
+      "year": 2014,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1777765/8ea947c2-1f6e-4972-a94f-d85e30e84700/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1777765/8ea947c2-1f6e-4972-a94f-d85e30e84700/x1000"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        },
+        {
+          "name": "комедия"
+        }
+      ],
+      "countries": [
+        {
+          "name": "США"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": "Birdman or (The Unexpected Virtue of Ignorance)",
+      "enName": null,
+      "names": [
+        {
+          "name": "Бёрдмэн"
+        },
+        {
+          "name": "Birdman or (The Unexpected Virtue of Ignorance)"
+        },
+        {
+          "name": "Birdman",
+          "language": "US",
+          "type": "short title"
+        },
+        {
+          "name": "Birdman avagy a mellőzés meglepő ereje",
+          "language": "HU",
+          "type": null
+        },
+        {
+          "name": "Birdman - The Unexpected Virtue of Ignorance",
+          "language": "AU",
+          "type": null
+        },
+        {
+          "name": "Birdman ou (A Inesperada Virtude da Ignorância)",
+          "language": "BR",
+          "type": null
+        },
+        {
+          "name": "Birdman o la inesperada virtud de la ignorancia",
+          "language": "MX",
+          "type": null
+        },
+        {
+          "name": "버드맨",
+          "language": "KR",
+          "type": null
+        },
+        {
+          "name": "Birdman",
+          "language": "SE",
+          "type": null
+        },
+        {
+          "name": "Birdman o (La inesperada virtud de la ignorancia)",
+          "language": "ES",
+          "type": null
+        },
+        {
+          "name": "Birdman - o (L'imprevedibile virtù dell'ignoranza)",
+          "language": "IT",
+          "type": null
+        }
+      ],
+      "ageRating": 18,
+      "ratingMpaa": "r",
+      "shortDescription": "Звезда кино о супергероях ставит театральную постановку. Завораживающее путешествие по творческому Нью-Йорку",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/1652588/2a000001701fb8bdefd955748658774d1e07/orig"
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    },
+    {
+      "status": null,
+      "rating": {
+        "kp": 7.858,
+        "imdb": 7.9,
+        "filmCritics": 8.1,
+        "russianFilmCritics": 50,
+        "await": null
+      },
+      "votes": {
+        "kp": 82107,
+        "imdb": 47740,
+        "filmCritics": 89,
+        "russianFilmCritics": 4,
+        "await": 0
+      },
+      "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/239697/2a00000178ea3205f198865557be4df08920/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/239697/2a00000178ea3205f198865557be4df08920/x1000"
+      },
+      "movieLength": 106,
+      "id": 47040,
+      "type": "movie",
+      "name": "Возвращение",
+      "description": "В жизни двух братьев неожиданно возникает отец, знакомый им только по фотографии десятилетней давности. Появление странного и чужого для них человека переворачивает жизнь мальчиков, когда отец вырывает ребят из привычной жизни в тихом родном городе и привозит на заброшенный остров.",
+      "year": 2003,
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1777765/13d14911-80cf-4e3f-9cfe-3ab1e389bf32/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1777765/13d14911-80cf-4e3f-9cfe-3ab1e389bf32/x1000"
+      },
+      "genres": [
+        {
+          "name": "драма"
+        }
+      ],
+      "countries": [
+        {
+          "name": "Россия"
+        }
+      ],
+      "typeNumber": 1,
+      "alternativeName": null,
+      "enName": null,
+      "names": [
+        {
+          "name": "Возвращение"
+        },
+        {
+          "name": "回家",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "归乡",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "Dönüş",
+          "language": "TR",
+          "type": null
+        },
+        {
+          "name": "Woswraschtschenije",
+          "language": "RU",
+          "type": "alternate transliteration"
+        },
+        {
+          "name": "爸不得爱你",
+          "language": "CN",
+          "type": null
+        },
+        {
+          "name": "Vozvrashchenie",
+          "language": "RU",
+          "type": "Translit"
+        },
+        {
+          "name": "O Regresso",
+          "language": "PT",
+          "type": null
+        },
+        {
+          "name": "The Return",
+          "language": "NL",
+          "type": null
+        },
+        {
+          "name": "The Return",
+          "language": "GB",
+          "type": null
+        },
+        {
+          "name": "Tilbake",
+          "language": "NO",
+          "type": null
+        },
+        {
+          "name": "Vozvrashcheniye",
+          "language": "RU",
+          "type": "Translit"
+        },
+        {
+          "name": "Die Rückkehr",
+          "language": "AT",
+          "type": null
+        },
+        {
+          "name": "Återkomsten",
+          "language": "SE",
+          "type": null
+        },
+        {
+          "name": "Le Retour",
+          "language": "FR",
+          "type": null
+        },
+        {
+          "name": "리턴",
+          "language": "KR",
+          "type": null
+        }
+      ],
+      "ageRating": 12,
+      "ratingMpaa": null,
+      "shortDescription": "В жизнь двух братьев неожиданно возвращается отец. Дебют Андрея Звягинцева — аскетичная драма, лауреат Венеции",
+      "ticketsOnSale": false,
+      "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/223007/2a00000178ab345e1090a878004b3b978e07/orig"
+      },
+      "top10": null,
+      "top250": null,
+      "isSeries": false,
+      "seriesLength": null,
+      "totalSeriesLength": null
+    }
+  ],
+  "total": 101,
+  "limit": 200,
+  "page": 1,
+  "pages": 1
+}
